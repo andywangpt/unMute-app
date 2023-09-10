@@ -7,8 +7,10 @@ import {
 } from 'react-native'
 import * as Speech from 'expo-speech'
 import { WordData } from './WordData'
+import { getButtonStyle } from './ButtonStyle'
 
 import { FontAwesome5 } from '@expo/vector-icons'
+import { buttonStyles } from './styles'
 
 export default function WordButton({
 	text,
@@ -22,26 +24,6 @@ export default function WordButton({
 	const [lastPressTime, setLastPressTime] = useState(0)
 	const [timeoutId, setTimeoutId] = useState(null)
 
-	const styles = StyleSheet.create({
-		button: {
-			justifyContent: 'center',
-			alignItems: 'center',
-			margin: 1,
-			padding: 1,
-			width: '8.18%',
-			height: 75,
-			borderRadius: 10,
-			borderColor: 'black',
-			borderWidth: 1,
-			// backgroundColor: '#636f6f',
-			//MECH #636f6f
-		},
-		buttonText: {
-			color: 'black',
-			fontWeight: 'bold',
-		},
-	})
-
 	const [lastPressedButton, setLastPressedButton] =
 		useState(null)
 
@@ -49,135 +31,7 @@ export default function WordButton({
 		setCurrentText(text)
 	}, [text])
 	//-----------------------------------------------------------------------------
-	const getButtonStyle = ({ pressed }) => {
-		if (category === 'MENU') {
-			return [
-				styles.button,
-				{
-					backgroundColor: pressed
-						? '#f1ffff'
-						: '#636f6f',
-				},
-			]
-		}
-
-		if (category === 'QUESTION_WORDS') {
-			return [
-				styles.button,
-				{
-					backgroundColor: pressed
-						? '#f1ffff'
-						: '#ffaa00',
-				},
-			]
-		}
-
-		if (category === 'WHO_WORDS') {
-			return [
-				styles.button,
-				{
-					backgroundColor: pressed
-						? '#f1ffff'
-						: '#8a9b9b',
-				},
-			]
-		}
-
-		if (category === 'HOW_WORDS') {
-			return [
-				styles.button,
-				{
-					backgroundColor: pressed
-						? '#f1ffff'
-						: '#c5dedd',
-				},
-			]
-		}
-
-		if (category === 'WHAT_WORDS') {
-			return [
-				styles.button,
-				{
-					backgroundColor: pressed
-						? '#f1ffff'
-						: '#dbe7e4',
-				},
-			]
-		}
-
-		if (category === 'WHEN_WORDS') {
-			return [
-				styles.button,
-				{
-					backgroundColor: pressed
-						? '#f1ffff'
-						: '#f3f8f8',
-				},
-			]
-		}
-
-		if (category === 'HOWMUCH_WORDS') {
-			return [
-				styles.button,
-				{
-					backgroundColor: pressed
-						? '#f1ffff'
-						: '#dcebeb',
-				},
-			]
-		}
-
-		if (category === 'WHERE_WORDS') {
-			return [
-				styles.button,
-				{
-					backgroundColor: pressed
-						? '#f1ffff'
-						: '#c5dedd',
-				},
-			]
-		}
-
-		if (category === 'WHICH_WORDS') {
-			return [
-				styles.button,
-				{
-					backgroundColor: pressed
-						? '#f1ffff'
-						: '#9eb2b1',
-				},
-			]
-		}
-		if (category === 'SOCIAL_WORDS') {
-			return [
-				styles.button,
-				{
-					backgroundColor: pressed
-						? '#f1ffff'
-						: '#768585',
-				},
-			]
-		}
-		if (category === 'PATHWAY_WORDS') {
-			return [
-				styles.button,
-				{
-					backgroundColor: pressed
-						? '#f1ffff'
-						: '#ffeecc',
-				},
-			]
-		} else {
-			return [
-				styles.button,
-				{
-					backgroundColor: pressed
-						? '#f1ffff'
-						: '#768585',
-				},
-			]
-		}
-	}
+	
 	//-----------------------------------------------------------
 	const handleWordButtonPress = () => {
 		const currentTime = new Date().getTime()
@@ -212,7 +66,9 @@ export default function WordButton({
 	return (
 		<Pressable
 			onPress={() => handleWordButtonPress(text)}
-			style={getButtonStyle}
+			style={({ pressed }) =>
+				[getButtonStyle(category, pressed), buttonStyles.button]
+			}
 			onLongPress={handleLongPress}
 			delayLongPress={750}
 		>
@@ -222,13 +78,16 @@ export default function WordButton({
 					size={24}
 					color='black'
 				/>
-				<Text style={styles.buttonText}>{text}</Text>
+				<Text style={buttonStyles.buttonText}>{text}</Text>
 			</View>
 		</Pressable>
 	)
 }
 
 //-----------------------------------------------------------------------------
+
+
+
 
 // const menuButtonStyle = {
 //   justifyContent: 'center',
@@ -243,3 +102,24 @@ export default function WordButton({
 //   backgroundColor: '#636f6f',
 //   //MECH #636f6f
 // };
+// const styles = StyleSheet.create({
+// 	button: {
+// 		justifyContent: 'center',
+// 		alignItems: 'center',
+// 		margin: 1,
+// 		padding: 1,
+// 		width: '8.18%',
+// 		height: 75,
+// 		borderRadius: 10,
+// 		borderColor: 'black',
+// 		borderWidth: 1,
+// 		// backgroundColor: '#636f6f',
+// 		//MECH #636f6f
+// 	},
+// 	buttonText: {
+// 		color: 'black',
+// 		fontWeight: 'bold',
+// 		justifyContent: 'center',
+// 		textAlign: 'center',
+// 	},
+// })

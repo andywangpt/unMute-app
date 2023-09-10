@@ -16,8 +16,8 @@ export const WordData = [
   },
 
   {
-    id: 'HOW',
-    word: 'HOW',
+    id: 'how',
+    word: 'how',
     category: 'QUESTION_WORDS',
     index: [1, 0],
     pathways: [],
@@ -25,7 +25,7 @@ export const WordData = [
 
   {
     id: 'feel',
-    word: 'Feel',
+    word: 'feel',
     color: 'blue',
     category: 'HOW_WORDS',
     index: [1, 1],
@@ -100,8 +100,8 @@ export const WordData = [
   },
 
   {
-    id: 'How much',
-    word: 'How much',
+    id: 'how much',
+    word: 'how much',
     color: 'blue',
     category: 'QUESTION_WORDS',
     index: [1, 1],
