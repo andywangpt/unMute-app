@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
 import { buttonStyles } from './styles.js'
 
-export const getButtonStyle = (category, pressed) => {
+export const getButtonColor = (category, pressed) => {
 	if (category === 'MENU') {
 		return [
 			buttonStyles.button,

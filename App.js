@@ -14,18 +14,52 @@ import * as Speech from 'expo-speech'
 const numCols = 12
 
 export default function App() {
-	const [buttonLayout, setButtonLayout] = useState([
-		...WordData,
-	])
+	const [buttonLayout, setButtonLayout] = useState([...WordData])
 
 	const [displayText, setDisplayText] = useState('')
 
 	useEffect(() => {
-		const words = buttonLayout.map(
-			(button) => button.word
-		)
+		const words = buttonLayout.map((button) => button.word)
 		console.log(words)
 	}, [buttonLayout])
+
+	const dictateText = () => {
+		Speech.speak(displayText)
+	}
+
+	const handleHomeButtonPress = () => {
+		setButtonLayout(WordData)
+	}
+
+	const handleHelloButtonPress = (word) => {
+		setDisplayText((prevText) => {
+			return prevText + ' Hi, I am Andy. '
+		})
+		Speech.speak(" Hi, I'm Andy ")
+	}
+
+	const getDynamicFontSize = (text) => {
+		const wordCount = text.split(' ').length + 2
+		if (wordCount <= 1) return 80 // adjust this size as required
+		if (wordCount <= 3) return 100
+		if (wordCount <= 5) return 60
+		if (wordCount <= 7) return 50
+		if (wordCount <= 9) return 40
+		return 25 // default size for longer sentences
+	}
+
+	const deleteLastWord = () => {
+		setDisplayText((prevText) => {
+			const words = prevText.trim().split(' ')
+			if (words.length <= 1) return '' // If only one word or no words, return an empty string.
+			words.pop() // Remove the last word.
+			return words.join(' ') // Convert the array of words back into a string.
+		})
+	}
+
+	const clearDisplayText = () => {
+		setDisplayText('')
+	}
 
 	const handleDoublePress = (pressedWord) => {
 		const pressedButton = buttonLayout.find(
@@ -46,23 +80,21 @@ export default function App() {
 
 			console.log('indexStart', indexStart)
 
-			const newLayout = buttonLayout.map(
-				(button, index) => {
-					if (
-						button.category !== 'MENU' &&
-						button.category !== 'QUESTION_WORDS' &&
-						index >= indexStart &&
-						index - indexStart < pathwayWords.length
-					) {
-						return {
-							...button,
-							word: pathwayWords[index - indexStart],
-							category: 'PATHWAY_WORDS',
-						}
+			const newLayout = buttonLayout.map((button, index) => {
+				if (
+					button.category !== 'MENU' &&
+					button.category !== 'QUESTION_WORDS' &&
+					index >= indexStart &&
+					index - indexStart < pathwayWords.length
+				) {
+					return {
+						...button,
+						word: pathwayWords[index - indexStart],
+						category: 'PATHWAY_WORDS',
 					}
-					return button
 				}
-			)
+				return button
+			})
 
 			setButtonLayout(newLayout)
 		}
@@ -71,54 +103,6 @@ export default function App() {
 	const handleLongPress = () => {
 		setButtonLayout(WordData)
 		console.log('wordData', WordData)
-	}
-
-	const displayStyle = {
-		// fontFamily: 'san-serif',
-		justifyContent: 'center',
-		alignItems: 'center',
-		height: 75,
-		backgroundColor: '#F0EFEB',
-		margin: 2,
-		width: '58%',
-	}
-
-	const dictateText = () => {
-		Speech.speak(displayText)
-	}
-
-	const handleHelloButtonPress = (word) => {
-		setDisplayText((prevText) => {
-			return prevText + ' Hi, I am Andy. '
-		})
-		Speech.speak(" Hi, I'm Andy ")
-	}
-
-	const deleteLastWord = () => {
-		setDisplayText((prevText) => {
-			const words = prevText.trim().split(' ')
-			if (words.length <= 1) return '' // If only one word or no words, return an empty string.
-			words.pop() // Remove the last word.
-			return words.join(' ') // Convert the array of words back into a string.
-		})
-	}
-
-	const handleHomeButtonPress = () => {
-		setButtonLayout(WordData)
-	}
-
-	const clearDisplayText = () => {
-		setDisplayText('')
-	}
-
-	const getDynamicFontSize = (text) => {
-		const wordCount = text.split(' ').length + 2
-		if (wordCount <= 1) return 80 // adjust this size as required
-		if (wordCount <= 3) return 100
-		if (wordCount <= 5) return 60
-		if (wordCount <= 7) return 50
-		if (wordCount <= 9) return 40
-		return 25 // default size for longer sentences
 	}
 
 	return (
@@ -146,10 +130,7 @@ export default function App() {
 						<Text
 							style={[
 								{
-									fontSize:
-										getDynamicFontSize(
-											displayText
-										),
+									fontSize: getDynamicFontSize(displayText),
 								},
 							]}
 						>
@@ -209,14 +190,14 @@ const styles = StyleSheet.create({
 	yStack: {
 		flex: 1,
 		alignItems: 'center',
-		padding: 10,
+		padding: 3,
 	},
 	xStack: {
 		flexDirection: 'row',
 		width: '100%',
 		justifyContent: 'space-between',
 		alignItems: 'center',
-		padding: 5,
+		padding: 1,
 		backgroundColor: '#2e3a43',
 	},
 	menuButton: {

@@ -7,7 +7,7 @@ import {
 } from 'react-native'
 import * as Speech from 'expo-speech'
 import { WordData } from './WordData'
-import { getButtonStyle } from './ButtonStyle'
+import { getButtonColor } from './ButtonColor'
 
 import { FontAwesome5 } from '@expo/vector-icons'
 import { buttonStyles } from './styles'
@@ -67,17 +67,17 @@ export default function WordButton({
 		<Pressable
 			onPress={() => handleWordButtonPress(text)}
 			style={({ pressed }) =>
-				[getButtonStyle(category, pressed), buttonStyles.button]
+				[getButtonColor(category, pressed), buttonStyles.button]
 			}
 			onLongPress={handleLongPress}
 			delayLongPress={750}
 		>
-			<View>
-				<FontAwesome5
+			<View justifyContent='center' alignItems='center'>
+				{/* <FontAwesome5
 					name='school'
-					size={24}
+					size={20}
 					color='black'
-				/>
+				/> */}
 				<Text style={buttonStyles.buttonText}>{text}</Text>
 			</View>
 		</Pressable>
