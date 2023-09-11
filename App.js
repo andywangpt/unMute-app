@@ -9,67 +9,54 @@ import {
 } from 'react-native'
 import WordButton from './WordButton.js'
 import { WordData } from './WordData.js'
-import * as Speech from 'expo-speech'
+
 import MenuTopRow from './MenuTopRow.js'
 import { MenuData } from './MenuData.js'
 import SideMenuButton from './SideMenuButton.js'
+import { TextInput } from 'react-native'
+import { Keyboard } from 'react-native'
+import { useRef } from 'react'
 
 const numCols = 11
 
 export default function App() {
 	const [buttonLayout, setButtonLayout] = useState([...WordData])
 	const [menuLayout, setMenuLayout] = useState([...MenuData])
-
 	const [displayText, setDisplayText] = useState('')
+
+	const [showKeyboard, setShowKeyboard] = useState(false) // State variable to control keyboard visibility
+	const [keyboardInput, setKeyboardInput] = useState('') // State variable to store keyboard input
+
+	const inputRef = useRef(null)
 
 	useEffect(() => {
 		const words = buttonLayout.map((button) => button.word)
 		console.log(words)
 	}, [buttonLayout])
 
-
 	useEffect(() => {
 		const menu = menuLayout.map((button) => button.word)
 		console.log(menu)
 	}, [menuLayout])
 
-	const dictateText = () => {
-		Speech.speak(displayText)
-	}
+	useEffect(() => {
+		if (showKeyboard) {
+			inputRef.current.focus()
+		}
+	}, [showKeyboard])
 
-	const handleHomeButtonPress = () => {
-		setButtonLayout(WordData)
-	}
+	useEffect(() => {
+		const keyboardDidHideListener = Keyboard.addListener(
+			'keyboardDidHide',
+			() => {
+				setShowKeyboard(false)
+			}
+		)
 
-	const handleHelloButtonPress = (word) => {
-		setDisplayText((prevText) => {
-			return prevText + ' Hi, I am Andy. '
-		})
-		Speech.speak(" Hi, I'm Andy ")
-	}
-
-	const getDynamicFontSize = (text) => {
-		const wordCount = text.split(' ').length + 2
-		if (wordCount <= 1) return 80
-		if (wordCount <= 3) return 100
-		if (wordCount <= 5) return 60
-		if (wordCount <= 7) return 50
-		if (wordCount <= 9) return 40
-		return 25
-	}
-
-	const deleteLastWord = () => {
-		setDisplayText((prevText) => {
-			const words = prevText.trim().split(' ')
-			if (words.length <= 1) return ''
-			words.pop()
-			return words.join(' ')
-		})
-	}
-
-	const clearDisplayText = () => {
-		setDisplayText('')
-	}
+		return () => {
+			keyboardDidHideListener.remove()
+		}
+	}, [])
 
 	const handleDoublePress = (pressedWord) => {
 		const pressedButton = buttonLayout.find(
@@ -83,9 +70,10 @@ export default function App() {
 
 			const indexStart = buttonLayout.filter(
 				(button) =>
-					button.category === 'PATHWAY_WORDS' ||
-					button.category === 'MENU' ||
-					button.category === 'QUESTION_WORDS'
+					button.category === 'PATHWAY_WORDS' &&
+					button.category === 'MENU' &&
+					button.category === 'QUESTION_WORDS' &&
+					button.category === 'SOCIAL_WORDS'
 			).length
 
 			const newLayout = buttonLayout.map((button, index) => {
@@ -116,17 +104,22 @@ export default function App() {
 	return (
 		<SafeAreaView style={styles.container}>
 			<View style={styles.yStack}>
-
 				<MenuTopRow
-					handleHomeButtonPress={handleHomeButtonPress}
-					handleHelloButtonPress={handleHelloButtonPress}
-					dictateText={dictateText}
+					// handleHomeButtonPress={handleHomeButtonPress}
+					// handleHelloButtonPress={handleHelloButtonPress}
+					// dictateText={dictateText}
+					setButtonLayout={setButtonLayout}
 					displayText={displayText}
-					getDynamicFontSize={getDynamicFontSize}
-					deleteLastWord={deleteLastWord}
-					clearDisplayText={clearDisplayText}
+					setDisplayText={setDisplayText}
+					// getDynamicFontSize={getDynamicFontSize}
+					// deleteLastWord={deleteLastWord}
+					// clearDisplayText={clearDisplayText}
+					showKeyboard={showKeyboard}
+					setKeyboardInput={setKeyboardInput}
+					keyboardInput={keyboardInput}
+					inputRef={inputRef}
 				/>
-				
+
 				<View style={styles.xStack}>
 					<View style={styles.menuContainer}>
 						<FlatList
@@ -136,9 +129,14 @@ export default function App() {
 									text={item.word}
 									category={item.category}
 									setDisplayText={setDisplayText}
-									onDoublePress={handleDoublePress}
+									displayText={displayText}
+									// onPress={handleMenuPress}
 									onLongPress={handleLongPress}
 									setButtonLayout={setButtonLayout}
+									showKeyboard={showKeyboard}
+									setShowKeyboard={setShowKeyboard}
+									setKeyboardInput={setKeyboardInput}
+									keyboardInput={keyboardInput}
 								/>
 							)}
 							keyExtractor={(item) => item.id}
@@ -182,16 +180,12 @@ const styles = StyleSheet.create({
 		width: '100%',
 	},
 	menuContainer: {
-		// flex: 10,
 		width: '8.18%',
 	},
 	xStack: {
 		flexDirection: 'row',
 		width: '100%',
 		flex: 1,
-		// justifyContent: 'space-between',
-		// alignItems: 'center',
 		padding: 1,
-
 	},
 })

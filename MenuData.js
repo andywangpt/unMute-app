@@ -26,7 +26,15 @@ export const MenuData = [
 		word: 'phrases',
 		category: 'MENU',
 		index: [0, 2],
-		pathways: [],
+		pathways: [
+			{ id: '1', coordinates: [1, 0] },
+			{ id: '2', coordinates: [1, 0] },
+			{ id: '3', coordinates: [1, 0] },
+			{ id: '4', coordinates: [1, 0] },
+			{ id: '5', coordinates: [1, 0] },
+			{ id: '6', coordinates: [1, 0] },
+			{ id: '7', coordinates: [1, 0] },
+		],
 	},
 	{
 		id: 'topics',

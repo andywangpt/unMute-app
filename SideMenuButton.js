@@ -1,13 +1,18 @@
 import React from 'react'
+import { useState, useEffect } from 'react'
+
 import {
 	View,
 	Text,
 	TouchableOpacity,
 	StyleSheet,
+	TextInput,
 } from 'react-native'
+
 import { Pressable } from 'react-native'
 import { buttonStyles } from './styles'
 import { getButtonColor } from './ButtonColor'
+import { WordData } from './WordData.js'
 
 const SideMenuButton = ({
 	text,
@@ -16,16 +21,80 @@ const SideMenuButton = ({
 	onDoublePress,
 	onLongPress,
 	setButtonLayout,
+	displayText,
+	showKeyboard,
+	setShowKeyboard,
+	setKeyboardInput,
 }) => {
-	
-   const handleMenuPress = () => {
-      if (text === 'back') {
-         setButtonLayout(prevState => {
-            return prevState
-         })
-      }
-   }
-   
+	const [editableText, setEditableText] = useState(displayText)
+
+	useEffect(() => {
+		// When showKeyboard becomes false, update keyboardInput with the edited text
+		if (!showKeyboard) {
+			setKeyboardInput(editableText)
+		}
+	}, [showKeyboard, editableText, setKeyboardInput])
+
+	const handleMenuPress = () => {
+		switch (text) {
+			case 'core':
+				break
+			
+			case 'phrases':
+				if (pressedButton && pressedButton.pathways) {
+					const pathwayWords = pressedButton.pathways.map(
+						(pathway) => pathway.id
+					)
+
+					const indexStart = buttonLayout.filter(
+						(button) =>
+							button.category === 'PATHWAY_WORDS' &&
+							button.category === 'MENU' &&
+							button.category === 'QUESTION_WORDS' &&
+							button.category === 'SOCIAL_WORDS'
+					).length
+
+					const newLayout = buttonLayout.map((button, index) => {
+						if (
+							button.category !== 'MENU' &&
+							button.category !== 'QUESTION_WORDS' &&
+							index >= indexStart &&
+							index - indexStart < pathwayWords.length
+						) {
+							return {
+								...button,
+								word: pathwayWords[index - indexStart],
+								category: 'PATHWAY_WORDS',
+							}
+						}
+						return button
+					})
+
+					setButtonLayout(newLayout)
+				}
+				break
+
+			case 'topics':
+				break
+			
+			case 'keyboard':
+				setKeyboardInput(displayText)
+				setShowKeyboard(true)
+				break
+
+			case 'settings':
+				break
+			
+			case 'back':
+				setButtonLayout(WordData)
+				break
+			
+			default:
+				break
+		}
+		console.log('handleMenuPress: ', text)
+	}
+
 	return (
 		<Pressable
 			onPress={() => handleMenuPress(text)}
@@ -33,14 +102,8 @@ const SideMenuButton = ({
 				getButtonColor(category, pressed),
 				buttonStyles.menuButton,
 			]}
-			delayLongPress={750}
 		>
 			<View justifyContent='center' alignItems='center'>
-				{/* <FontAwesome5
-					name='school'
-					size={20}
-					color='black'
-				/> */}
 				<Text style={buttonStyles.buttonText}>{text}</Text>
 			</View>
 		</Pressable>
@@ -82,7 +145,6 @@ const styles = StyleSheet.create({
 		width: '58.5%',
 		borderRadius: 10,
 	},
-
 })
 
 export default SideMenuButton

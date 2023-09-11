@@ -4,17 +4,67 @@ import {
 	Text,
 	TouchableOpacity,
 	StyleSheet,
+	TextInput,
 } from 'react-native'
-
+import { useState, useEffect } from 'react'
+import { useRef } from 'react'
+import * as Speech from 'expo-speech'
+import { WordData } from './WordData.js'
 const MenuTopRow = ({
-	handleHomeButtonPress,
-	handleHelloButtonPress,
-	dictateText,
+	// handleHelloButtonPress,
+	// dictateText,
 	displayText,
-	getDynamicFontSize,
-	deleteLastWord,
-	clearDisplayText,
+	setDisplayText,
+	// getDynamicFontSize,
+	// deleteLastWord,
+	// clearDisplayText,
+	showKeyboard, // Receive showKeyboard prop
+	setKeyboardInput, // Receive setKeyboardInput
+	keyboardInput, // Receive keyboardInput
+	inputRef, // Receive inputRef
+	setButtonLayout,
 }) => {
+
+	const dictateText = () => {
+		Speech.speak(displayText)
+	}
+
+	const handleHomeButtonPress = () => {
+		setButtonLayout(WordData)
+	}
+
+	const handleHelloButtonPress = (word) => {
+		setDisplayText((prevText) => {
+			return (
+				prevText + ' Hi, I am Andy. This is my talking soundboard'
+			)
+		})
+		Speech.speak(" Hi, I'm Andy.  This is my talking soundboard.")
+	}
+
+	const getDynamicFontSize = (text) => {
+		const wordCount = text.split(' ').length + 2
+		if (wordCount <= 1) return 80
+		if (wordCount <= 3) return 100
+		if (wordCount <= 5) return 60
+		if (wordCount <= 7) return 50
+		if (wordCount <= 9) return 40
+		return 25
+	}
+
+	const deleteLastWord = () => {
+		setDisplayText((prevText) => {
+			const words = prevText.trim().split(' ')
+			if (words.length <= 1) return ''
+			words.pop()
+			return words.join(' ')
+		})
+	}
+
+	const clearDisplayText = () => {
+		setDisplayText('')
+	}
+
 	return (
 		<View style={styles.xStack}>
 			<TouchableOpacity
@@ -35,15 +85,24 @@ const MenuTopRow = ({
 				style={styles.displayStyle}
 				onPress={dictateText}
 			>
-				<Text
+				<TextInput
+					ref={inputRef}
 					style={[
 						{
-							fontSize: getDynamicFontSize(displayText),
+							fontSize: getDynamicFontSize(
+								showKeyboard ? keyboardInput : displayText
+							),
 						},
 					]}
-				>
-					{displayText}
-				</Text>
+					value={showKeyboard ? keyboardInput : displayText}
+					onChangeText={(text) => {
+						if (showKeyboard) {
+							setKeyboardInput(text)
+						} else {
+							setDisplayText(text)
+						}
+					}}
+				/>
 			</TouchableOpacity>
 
 			<TouchableOpacity
@@ -76,9 +135,8 @@ const styles = StyleSheet.create({
 		width: '100%',
 		justifyContent: 'center',
 		alignItems: 'center',
-      // padding: 1,
-      margin: 1,
-      marginBottom: 0,
+		margin: 1,
+		marginBottom: 0,
 		backgroundColor: '#2e3a43',
 	},
 	menuButton: {
