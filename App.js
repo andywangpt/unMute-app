@@ -12,7 +12,7 @@ import { WordData } from './WordData.js'
 import * as Speech from 'expo-speech'
 import MenuTopRow from './MenuTopRow.js'
 import { MenuData } from './MenuData.js'
-import MenuButton from './MenuButton.js'
+import SideMenuButton from './SideMenuButton.js'
 
 const numCols = 11
 
@@ -132,7 +132,7 @@ export default function App() {
 						<FlatList
 							data={menuLayout}
 							renderItem={({ item }) => (
-								<MenuButton
+								<SideMenuButton
 									text={item.word}
 									category={item.category}
 									setDisplayText={setDisplayText}

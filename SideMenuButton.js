@@ -9,7 +9,7 @@ import { Pressable } from 'react-native'
 import { buttonStyles } from './styles'
 import { getButtonColor } from './ButtonColor'
 
-const MenuTopRow = ({
+const SideMenuButton = ({
 	text,
 	category,
 	setDisplayText,
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
 		margin: 0.5,
 		padding: 0,
 		height: 75,
-		width: '8.17%',
+		width: '8.18%',
 		borderRadius: 10,
 		borderWidth: 1,
 		borderColor: 'black',
@@ -85,4 +85,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default MenuTopRow
+export default SideMenuButton
