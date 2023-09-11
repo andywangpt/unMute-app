@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState, useEffect, useRef, React } from 'react'
 import {
 	View,
 	Text,
@@ -6,25 +6,21 @@ import {
 	StyleSheet,
 	TextInput,
 } from 'react-native'
-import { useState, useEffect } from 'react'
-import { useRef } from 'react'
+
 import * as Speech from 'expo-speech'
+
 import { WordData } from './WordData.js'
+
 const MenuTopRow = ({
-	// handleHelloButtonPress,
-	// dictateText,
 	displayText,
 	setDisplayText,
-	// getDynamicFontSize,
-	// deleteLastWord,
-	// clearDisplayText,
 	showKeyboard, // Receive showKeyboard prop
 	setKeyboardInput, // Receive setKeyboardInput
 	keyboardInput, // Receive keyboardInput
 	inputRef, // Receive inputRef
 	setButtonLayout,
 }) => {
-
+	
 	const dictateText = () => {
 		Speech.speak(displayText)
 	}

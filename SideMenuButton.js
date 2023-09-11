@@ -1,45 +1,34 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 
-import {
-	View,
-	Text,
-	TouchableOpacity,
-	StyleSheet,
-	TextInput,
-} from 'react-native'
+import { View, Text, StyleSheet, Pressable } from 'react-native'
 
-import { Pressable } from 'react-native'
+import { WordData } from './WordData.js'
 import { buttonStyles } from './styles'
 import { getButtonColor } from './ButtonColor'
-import { WordData } from './WordData.js'
 
 const SideMenuButton = ({
 	text,
 	category,
-	setDisplayText,
-	onDoublePress,
-	onLongPress,
 	setButtonLayout,
 	displayText,
 	showKeyboard,
 	setShowKeyboard,
 	setKeyboardInput,
 }) => {
-	const [editableText, setEditableText] = useState(displayText)
-
 	useEffect(() => {
-		// When showKeyboard becomes false, update keyboardInput with the edited text
 		if (!showKeyboard) {
 			setKeyboardInput(editableText)
 		}
 	}, [showKeyboard, editableText, setKeyboardInput])
 
+	const [editableText, setEditableText] = useState(displayText)
+
 	const handleMenuPress = () => {
 		switch (text) {
 			case 'core':
 				break
-			
+
 			case 'phrases':
 				if (pressedButton && pressedButton.pathways) {
 					const pathwayWords = pressedButton.pathways.map(
@@ -76,7 +65,7 @@ const SideMenuButton = ({
 
 			case 'topics':
 				break
-			
+
 			case 'keyboard':
 				setKeyboardInput(displayText)
 				setShowKeyboard(true)
@@ -84,11 +73,11 @@ const SideMenuButton = ({
 
 			case 'settings':
 				break
-			
+
 			case 'back':
 				setButtonLayout(WordData)
 				break
-			
+
 			default:
 				break
 		}

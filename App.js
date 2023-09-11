@@ -1,43 +1,36 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import {
 	FlatList,
 	SafeAreaView,
 	View,
-	Text,
-	TouchableOpacity,
 	StyleSheet,
+	Keyboard,
 } from 'react-native'
-import WordButton from './WordButton.js'
-import { WordData } from './WordData.js'
 
 import MenuTopRow from './MenuTopRow.js'
-import { MenuData } from './MenuData.js'
 import SideMenuButton from './SideMenuButton.js'
-import { TextInput } from 'react-native'
-import { Keyboard } from 'react-native'
-import { useRef } from 'react'
+import WordButton from './WordButton.js'
+
+import { MenuData } from './MenuData.js'
+import { WordData } from './WordData.js'
+
 
 const numCols = 11
 
 export default function App() {
+	
 	const [buttonLayout, setButtonLayout] = useState([...WordData])
 	const [menuLayout, setMenuLayout] = useState([...MenuData])
 	const [displayText, setDisplayText] = useState('')
-
-	const [showKeyboard, setShowKeyboard] = useState(false) // State variable to control keyboard visibility
-	const [keyboardInput, setKeyboardInput] = useState('') // State variable to store keyboard input
-
+	const [showKeyboard, setShowKeyboard] = useState(false)
+	const [keyboardInput, setKeyboardInput] = useState('')
+	
 	const inputRef = useRef(null)
 
 	useEffect(() => {
 		const words = buttonLayout.map((button) => button.word)
 		console.log(words)
 	}, [buttonLayout])
-
-	useEffect(() => {
-		const menu = menuLayout.map((button) => button.word)
-		console.log(menu)
-	}, [menuLayout])
 
 	useEffect(() => {
 		if (showKeyboard) {
@@ -52,7 +45,6 @@ export default function App() {
 				setShowKeyboard(false)
 			}
 		)
-
 		return () => {
 			keyboardDidHideListener.remove()
 		}
@@ -96,24 +88,13 @@ export default function App() {
 		}
 	}
 
-	const handleLongPress = () => {
-		console.log('wordData', WordData)
-		//
-	}
-
 	return (
 		<SafeAreaView style={styles.container}>
 			<View style={styles.yStack}>
 				<MenuTopRow
-					// handleHomeButtonPress={handleHomeButtonPress}
-					// handleHelloButtonPress={handleHelloButtonPress}
-					// dictateText={dictateText}
 					setButtonLayout={setButtonLayout}
 					displayText={displayText}
 					setDisplayText={setDisplayText}
-					// getDynamicFontSize={getDynamicFontSize}
-					// deleteLastWord={deleteLastWord}
-					// clearDisplayText={clearDisplayText}
 					showKeyboard={showKeyboard}
 					setKeyboardInput={setKeyboardInput}
 					keyboardInput={keyboardInput}
@@ -130,8 +111,6 @@ export default function App() {
 									category={item.category}
 									setDisplayText={setDisplayText}
 									displayText={displayText}
-									// onPress={handleMenuPress}
-									onLongPress={handleLongPress}
 									setButtonLayout={setButtonLayout}
 									showKeyboard={showKeyboard}
 									setShowKeyboard={setShowKeyboard}
@@ -152,7 +131,7 @@ export default function App() {
 									category={item.category}
 									setDisplayText={setDisplayText}
 									onDoublePress={handleDoublePress}
-									onLongPress={handleLongPress}
+									// onLongPress={handleLongPress}
 									setButtonLayout={setButtonLayout}
 								/>
 							)}
