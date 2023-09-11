@@ -112,6 +112,7 @@ export default function App() {
 									setDisplayText={setDisplayText}
 									displayText={displayText}
 									setButtonLayout={setButtonLayout}
+									buttonLayout={buttonLayout}
 									showKeyboard={showKeyboard}
 									setShowKeyboard={setShowKeyboard}
 									setKeyboardInput={setKeyboardInput}

@@ -6,11 +6,13 @@ import { View, Text, StyleSheet, Pressable } from 'react-native'
 import { WordData } from './WordData.js'
 import { buttonStyles } from './styles'
 import { getButtonColor } from './ButtonColor'
+import { MenuData } from './MenuData.js'
 
 const SideMenuButton = ({
 	text,
 	category,
 	setButtonLayout,
+	buttonLayout,
 	displayText,
 	showKeyboard,
 	setShowKeyboard,
@@ -25,8 +27,72 @@ const SideMenuButton = ({
 	const [editableText, setEditableText] = useState(displayText)
 
 	const handleMenuPress = () => {
+		const pressedButton = MenuData.find(
+			(button) => button.word === text
+		)
+
 		switch (text) {
+			case '#':
+				if (pressedButton && pressedButton.pathways) {
+					const pathwayWords = pressedButton.pathways.map(
+						(pathway) => pathway.id
+					)
+
+					const indexStart = buttonLayout.filter(
+						(button) => button.category === 'PATHWAY_WORDS'
+					).length
+
+					const newLayout = buttonLayout.map((button, index) => {
+						if (
+							button.category !== 'MENU' &&
+							index >= indexStart &&
+							index - indexStart < pathwayWords.length
+						) {
+							return {
+								...button,
+								word: pathwayWords[index - indexStart],
+								category: 'PATHWAY_WORDS',
+							}
+						}
+						return button
+					})
+
+					setButtonLayout(newLayout)
+				}
+				break
+
 			case 'core':
+				if (pressedButton && pressedButton.pathways) {
+					const pathwayWords = pressedButton.pathways.map(
+						(pathway) => pathway.id
+					)
+
+					const indexStart = buttonLayout.filter(
+						(button) =>
+							button.category === 'PATHWAY_WORDS' &&
+							button.category === 'MENU' &&
+							button.category === 'QUESTION_WORDS' &&
+							button.category === 'SOCIAL_WORDS'
+					).length
+
+					const newLayout = buttonLayout.map((button, index) => {
+						if (
+							button.category !== 'MENU' &&
+							button.category !== 'QUESTION_WORDS' &&
+							index >= indexStart &&
+							index - indexStart < pathwayWords.length
+						) {
+							return {
+								...button,
+								word: pathwayWords[index - indexStart],
+								category: 'PATHWAY_WORDS',
+							}
+						}
+						return button
+					})
+
+					setButtonLayout(newLayout)
+				}
 				break
 
 			case 'phrases':
@@ -45,7 +111,6 @@ const SideMenuButton = ({
 
 					const newLayout = buttonLayout.map((button, index) => {
 						if (
-							button.category !== 'MENU' &&
 							button.category !== 'QUESTION_WORDS' &&
 							index >= indexStart &&
 							index - indexStart < pathwayWords.length
