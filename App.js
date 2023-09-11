@@ -10,6 +10,7 @@ import {
 import WordButton from './WordButton.js'
 import { WordData } from './WordData.js'
 import * as Speech from 'expo-speech'
+import MenuTopRow from './MenuTopRow.js'
 
 const numCols = 12
 
@@ -40,20 +41,20 @@ export default function App() {
 
 	const getDynamicFontSize = (text) => {
 		const wordCount = text.split(' ').length + 2
-		if (wordCount <= 1) return 80 // adjust this size as required
+		if (wordCount <= 1) return 80
 		if (wordCount <= 3) return 100
 		if (wordCount <= 5) return 60
 		if (wordCount <= 7) return 50
 		if (wordCount <= 9) return 40
-		return 25 // default size for longer sentences
+		return 25
 	}
 
 	const deleteLastWord = () => {
 		setDisplayText((prevText) => {
 			const words = prevText.trim().split(' ')
-			if (words.length <= 1) return '' // If only one word or no words, return an empty string.
-			words.pop() // Remove the last word.
-			return words.join(' ') // Convert the array of words back into a string.
+			if (words.length <= 1) return ''
+			words.pop()
+			return words.join(' ')
 		})
 	}
 
@@ -78,8 +79,6 @@ export default function App() {
 					button.category === 'QUESTION_WORDS'
 			).length
 
-			console.log('indexStart', indexStart)
-
 			const newLayout = buttonLayout.map((button, index) => {
 				if (
 					button.category !== 'MENU' &&
@@ -101,64 +100,22 @@ export default function App() {
 	}
 
 	const handleLongPress = () => {
-		setButtonLayout(WordData)
 		console.log('wordData', WordData)
+		//
 	}
 
 	return (
 		<SafeAreaView style={styles.container}>
 			<View style={styles.yStack}>
-				<View style={styles.xStack}>
-					<TouchableOpacity
-						onPress={handleHomeButtonPress}
-						style={styles.menuButton}
-					>
-						<Text style={styles.buttonText}>🏠</Text>
-					</TouchableOpacity>
-
-					<TouchableOpacity
-						style={styles.menuButton}
-						onPress={handleHelloButtonPress}
-					>
-						<Text style={styles.buttonText}>👋🏼</Text>
-					</TouchableOpacity>
-
-					<TouchableOpacity
-						style={styles.displayStyle}
-						onPress={dictateText}
-					>
-						<Text
-							style={[
-								{
-									fontSize: getDynamicFontSize(displayText),
-								},
-							]}
-						>
-							{displayText}
-						</Text>
-					</TouchableOpacity>
-
-					<TouchableOpacity
-						style={styles.menuButton}
-						onPress={deleteLastWord}
-					>
-						<Text style={styles.buttonText}>⬅️</Text>
-					</TouchableOpacity>
-
-					<TouchableOpacity
-						style={styles.menuButton}
-						onPress={clearDisplayText}
-					>
-						<Text style={styles.buttonText}>X</Text>
-					</TouchableOpacity>
-
-					<TouchableOpacity
-						onPress={handleHomeButtonPress}
-						style={styles.menuButton}
-					>
-						<Text style={styles.buttonText}>🏠</Text>
-					</TouchableOpacity>
-				</View>
+				<MenuTopRow
+					handleHomeButtonPress={handleHomeButtonPress}
+					handleHelloButtonPress={handleHelloButtonPress}
+					dictateText={dictateText}
+					displayText={displayText}
+					getDynamicFontSize={getDynamicFontSize}
+					deleteLastWord={deleteLastWord}
+					clearDisplayText={clearDisplayText}
+				/>
 
 				<View style={styles.flatListContainer}>
 					<FlatList
@@ -186,45 +143,12 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: '#2e3a43',
+		justifyContent: 'center',
 	},
 	yStack: {
+		padding: 3,
 		flex: 1,
 		alignItems: 'center',
-		padding: 3,
-	},
-	xStack: {
-		flexDirection: 'row',
-		width: '100%',
-		justifyContent: 'space-between',
-		alignItems: 'center',
-		padding: 1,
-		backgroundColor: '#2e3a43',
-	},
-	menuButton: {
-		justifyContent: 'center',
-		alignItems: 'center',
-		margin: 1,
-		padding: 1,
-		height: 75,
-		width: '8.18%',
-		borderRadius: 10,
-		borderWidth: 1,
-		borderColor: 'black',
-		backgroundColor: '#636f6f',
-	},
-	buttonText: {
-		fontSize: 35,
-		justifyContent: 'center',
-	},
-	displayStyle: {
-		justifyContent: 'center',
-		alignItems: 'center',
-		height: 75,
-		backgroundColor: '#F0EFEB',
-		margin: 1,
-		marginBottom: 0,
-		width: '58.5%',
-		borderRadius: 10,
 	},
 	flatListContainer: {
 		flex: 1,

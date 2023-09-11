@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {
-	StyleSheet,
-	Text,
-	View,
-	Pressable,
-} from 'react-native'
+import { StyleSheet, Text, View, Pressable } from 'react-native'
 import * as Speech from 'expo-speech'
 import { WordData } from './WordData'
 import { getButtonColor } from './ButtonColor'
@@ -24,15 +19,12 @@ export default function WordButton({
 	const [lastPressTime, setLastPressTime] = useState(0)
 	const [timeoutId, setTimeoutId] = useState(null)
 
-	const [lastPressedButton, setLastPressedButton] =
-		useState(null)
+	const [lastPressedButton, setLastPressedButton] = useState(null)
 
 	useEffect(() => {
 		setCurrentText(text)
 	}, [text])
-	//-----------------------------------------------------------------------------
-	
-	//-----------------------------------------------------------
+
 	const handleWordButtonPress = () => {
 		const currentTime = new Date().getTime()
 		const timeDifference = currentTime - lastPressTime
@@ -42,8 +34,6 @@ export default function WordButton({
 		}
 
 		if (timeDifference < 800) {
-			// double press
-			console.log('double press', currentText)
 			onDoublePress(currentText)
 		} else {
 			const id = setTimeout(() => {
@@ -58,17 +48,16 @@ export default function WordButton({
 	}
 
 	const handleLongPress = () => {
-		console.log('long press', currentText)
 		setButtonLayout(WordData)
 	}
-	//-----------------------------------------------------------------------------
 
 	return (
 		<Pressable
 			onPress={() => handleWordButtonPress(text)}
-			style={({ pressed }) =>
-				[getButtonColor(category, pressed), buttonStyles.button]
-			}
+			style={({ pressed }) => [
+				getButtonColor(category, pressed),
+				buttonStyles.button,
+			]}
 			onLongPress={handleLongPress}
 			delayLongPress={750}
 		>
@@ -84,11 +73,6 @@ export default function WordButton({
 	)
 }
 
-//-----------------------------------------------------------------------------
-
-
-
-
 // const menuButtonStyle = {
 //   justifyContent: 'center',
 //   alignItems: 'center',
@@ -102,24 +86,3 @@ export default function WordButton({
 //   backgroundColor: '#636f6f',
 //   //MECH #636f6f
 // };
-// const styles = StyleSheet.create({
-// 	button: {
-// 		justifyContent: 'center',
-// 		alignItems: 'center',
-// 		margin: 1,
-// 		padding: 1,
-// 		width: '8.18%',
-// 		height: 75,
-// 		borderRadius: 10,
-// 		borderColor: 'black',
-// 		borderWidth: 1,
-// 		// backgroundColor: '#636f6f',
-// 		//MECH #636f6f
-// 	},
-// 	buttonText: {
-// 		color: 'black',
-// 		fontWeight: 'bold',
-// 		justifyContent: 'center',
-// 		textAlign: 'center',
-// 	},
-// })

@@ -6,7 +6,7 @@ export const buttonStyles = StyleSheet.create({
 		alignItems: 'center',
 		margin: 1,
 		padding: 1,
-		width: '8.18%',
+		width: '8.17%',
 		height: 75,
 		borderRadius: 10,
 		borderColor: 'black',
