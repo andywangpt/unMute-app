@@ -1,0 +1,58 @@
+export const MenuData = [
+	{
+		id: '#',
+		word: '#',
+		category: 'MENU',
+		index: [0, 0],
+		pathways: [],
+	},
+	{
+		id: 'core',
+		word: 'core',
+		category: 'MENU',
+		index: [0, 1],
+		pathways: [],
+	},
+	{
+		id: 'phrases',
+		word: 'phrases',
+		category: 'MENU',
+		index: [0, 2],
+		pathways: [],
+	},
+	{
+		id: 'topics',
+		word: 'topics',
+		category: 'MENU',
+		index: [0, 3],
+		pathways: [],
+	},
+	{
+		id: 'keyboard',
+		word: 'keyboard',
+		category: 'MENU',
+		index: [4, 0],
+		pathways: [],
+	},
+	{
+		id: 'settings',
+		word: 'settings',
+		category: 'MENU',
+		index: [0, 6],
+		pathways: [],
+	},
+	{
+		id: 'back',
+		word: 'back',
+		category: 'MENU',
+		index: [0, 5],
+		pathways: [],
+	},
+	{
+		id: '',
+		word: '',
+		category: 'MENU',
+		index: [0, 5],
+		pathways: [],
+	},
+]

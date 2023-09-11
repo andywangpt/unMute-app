@@ -1,11 +1,4 @@
 export const WordData = [
-	{
-		id: '#',
-		word: '#',
-		category: 'MENU',
-		index: [0, 0],
-		pathways: [],
-	},
 
 	{
 		id: 'who',
@@ -183,13 +176,7 @@ export const WordData = [
 
 	//-----------------------------------------------
 
-	{
-		id: 'core',
-		word: 'core',
-		category: 'MENU',
-		index: [0, 1],
-		pathways: [],
-	},
+
 
 	{
 		id: 'i',
@@ -280,13 +267,7 @@ export const WordData = [
 	},
 
 	//-----------------------------------------------
-	{
-		id: 'phrases',
-		word: 'phrases',
-		category: 'MENU',
-		index: [0, 2],
-		pathways: [],
-	},
+
 
 	{
 		id: 'you',
@@ -377,13 +358,7 @@ export const WordData = [
 	},
 
 	//-----------------------------------------------
-	{
-		id: 'topics',
-		word: 'topics',
-		category: 'MENU',
-		index: [0, 3],
-		pathways: [],
-	},
+
 
 	{
 		id: 'she',
@@ -474,13 +449,7 @@ export const WordData = [
 	},
 	//-----------------------------------------------
 
-	{
-		id: 'keyboard',
-		word: 'keyboard',
-		category: 'MENU',
-		index: [4, 0],
-		pathways: [],
-	},
+
 	{
 		id: 'he',
 		word: 'he',
@@ -570,13 +539,7 @@ export const WordData = [
 	},
 
 	//-----------------------------------------------
-	{
-		id: 'settings',
-		word: 'settings',
-		category: 'MENU',
-		index: [0, 6],
-		pathways: [],
-	},
+
 
 	{
 		id: 'they',
@@ -667,13 +630,7 @@ export const WordData = [
 	},
 
 	//-----------------------------------------------
-	{
-		id: 'back',
-		word: 'back',
-		category: 'MENU',
-		index: [0, 5],
-		pathways: [],
-	},
+
 
 	{
 		id: 'we',

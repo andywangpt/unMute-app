@@ -6,8 +6,8 @@ export const buttonStyles = StyleSheet.create({
 		alignItems: 'center',
 		margin: 1,
 		padding: 1,
-		width: '8.17%',
-		height: 75,
+		width: '8.18%',
+		height: 80,
 		borderRadius: 10,
 		borderColor: 'black',
 		borderWidth: 1,
@@ -20,4 +20,15 @@ export const buttonStyles = StyleSheet.create({
 		justifyContent: 'center',
 		textAlign: 'center',
 	},
+	menuButton: {
+		justifyContent: 'center',
+		alignItems: 'center',
+		margin: 1,
+		padding: 1,
+		width: '99%',
+		height: 80,
+		borderRadius: 10,
+		borderColor: 'black',
+		borderWidth: 1,
+	}
 })

@@ -11,11 +11,14 @@ import WordButton from './WordButton.js'
 import { WordData } from './WordData.js'
 import * as Speech from 'expo-speech'
 import MenuTopRow from './MenuTopRow.js'
+import { MenuData } from './MenuData.js'
+import MenuButton from './MenuButton.js'
 
-const numCols = 12
+const numCols = 11
 
 export default function App() {
 	const [buttonLayout, setButtonLayout] = useState([...WordData])
+	const [menuLayout, setMenuLayout] = useState([...MenuData])
 
 	const [displayText, setDisplayText] = useState('')
 
@@ -23,6 +26,12 @@ export default function App() {
 		const words = buttonLayout.map((button) => button.word)
 		console.log(words)
 	}, [buttonLayout])
+
+
+	useEffect(() => {
+		const menu = menuLayout.map((button) => button.word)
+		console.log(menu)
+	}, [menuLayout])
 
 	const dictateText = () => {
 		Speech.speak(displayText)
@@ -107,6 +116,7 @@ export default function App() {
 	return (
 		<SafeAreaView style={styles.container}>
 			<View style={styles.yStack}>
+
 				<MenuTopRow
 					handleHomeButtonPress={handleHomeButtonPress}
 					handleHelloButtonPress={handleHelloButtonPress}
@@ -116,23 +126,42 @@ export default function App() {
 					deleteLastWord={deleteLastWord}
 					clearDisplayText={clearDisplayText}
 				/>
+				
+				<View style={styles.xStack}>
+					<View style={styles.menuContainer}>
+						<FlatList
+							data={menuLayout}
+							renderItem={({ item }) => (
+								<MenuButton
+									text={item.word}
+									category={item.category}
+									setDisplayText={setDisplayText}
+									onDoublePress={handleDoublePress}
+									onLongPress={handleLongPress}
+									setButtonLayout={setButtonLayout}
+								/>
+							)}
+							keyExtractor={(item) => item.id}
+						/>
+					</View>
 
-				<View style={styles.flatListContainer}>
-					<FlatList
-						data={buttonLayout}
-						renderItem={({ item }) => (
-							<WordButton
-								text={item.word}
-								category={item.category}
-								setDisplayText={setDisplayText}
-								onDoublePress={handleDoublePress}
-								onLongPress={handleLongPress}
-								setButtonLayout={setButtonLayout}
-							/>
-						)}
-						keyExtractor={(item) => item.id}
-						numColumns={numCols}
-					/>
+					<View style={styles.flatListContainer}>
+						<FlatList
+							data={buttonLayout}
+							renderItem={({ item }) => (
+								<WordButton
+									text={item.word}
+									category={item.category}
+									setDisplayText={setDisplayText}
+									onDoublePress={handleDoublePress}
+									onLongPress={handleLongPress}
+									setButtonLayout={setButtonLayout}
+								/>
+							)}
+							keyExtractor={(item) => item.id}
+							numColumns={numCols}
+						/>
+					</View>
 				</View>
 			</View>
 		</SafeAreaView>
@@ -143,15 +172,26 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: '#2e3a43',
-		justifyContent: 'center',
 	},
 	yStack: {
-		padding: 3,
+		padding: 1,
 		flex: 1,
 		alignItems: 'center',
 	},
 	flatListContainer: {
-		flex: 1,
 		width: '100%',
+	},
+	menuContainer: {
+		// flex: 10,
+		width: '8.18%',
+	},
+	xStack: {
+		flexDirection: 'row',
+		width: '100%',
+		flex: 1,
+		// justifyContent: 'space-between',
+		// alignItems: 'center',
+		padding: 1,
+
 	},
 })
