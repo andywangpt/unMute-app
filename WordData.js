@@ -1,5 +1,4 @@
 export const WordData = [
-
 	{
 		id: 'who',
 		word: 'who',
@@ -176,8 +175,6 @@ export const WordData = [
 
 	//-----------------------------------------------
 
-
-
 	{
 		id: 'i',
 		word: 'i',
@@ -267,7 +264,6 @@ export const WordData = [
 	},
 
 	//-----------------------------------------------
-
 
 	{
 		id: 'you',
@@ -359,7 +355,6 @@ export const WordData = [
 
 	//-----------------------------------------------
 
-
 	{
 		id: 'she',
 		word: 'she',
@@ -448,7 +443,6 @@ export const WordData = [
 		pathways: [],
 	},
 	//-----------------------------------------------
-
 
 	{
 		id: 'he',
@@ -540,7 +534,6 @@ export const WordData = [
 
 	//-----------------------------------------------
 
-
 	{
 		id: 'they',
 		word: 'they',
@@ -631,7 +624,6 @@ export const WordData = [
 
 	//-----------------------------------------------
 
-
 	{
 		id: 'we',
 		word: 'we',
@@ -720,16 +712,94 @@ export const WordData = [
 		pathways: [],
 	},
 	//-----------------------------------------------
+
 	{
-		id: 'space',
-		word: ' ',
-		category: 'MENU',
-		index: [0, 7],
+		id: 'it',
+		word: 'it',
+		category: 'WHO_WORDS',
+		index: [3, 0],
 		pathways: [],
 	},
 
-	//-----------------------------------------------
+	{
+		id: 'like',
+		word: 'like',
+		category: 'HOW_WORDS',
+		index: [2, 0],
+		pathways: [],
+	},
 
+	{
+		id: 'can',
+		word: 'can',
+		category: 'HOW_WORDS',
+		index: [2, 0],
+		pathways: [],
+	},
+
+	{
+		id: 'try',
+		word: 'try',
+		category: 'HOW_WORDS',
+		index: [2, 0],
+		pathways: [],
+	},
+
+	{
+		id: 'yet',
+		word: 'yet',
+		category: 'WHEN_WORDS',
+		index: [2, 0],
+		pathways: [],
+	},
+
+	{
+		id: 'small',
+		word: 'small',
+		category: 'HOWMUCH_WORDS',
+		index: [2, 0],
+		pathways: [],
+	},
+
+	{
+		id: 'on',
+		word: 'on',
+		category: 'WHERE_WORDS',
+		index: [2, 0],
+		pathways: [],
+	},
+
+	{
+		id: 'a',
+		word: 'a',
+		category: 'WHAT_WORDS',
+		index: [2, 0],
+		pathways: [],
+	},
+
+	{
+		id: 'last',
+		word: 'last',
+		category: 'WHICH_WORDS',
+		index: [2, 0],
+		pathways: [],
+	},
+
+	{
+		id: 'stop',
+		word: 'stop',
+		category: 'SOCIAL_WORDS',
+		index: [2, 0],
+		pathways: [],
+	},
+
+	{
+		id: 'question',
+		word: 'question',
+		category: 'SOCIAL_WORDS',
+		index: [2, 0],
+		pathways: [],
+	},
 	// ... other buttons
 ]
 

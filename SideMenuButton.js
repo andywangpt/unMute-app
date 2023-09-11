@@ -62,58 +62,28 @@ const SideMenuButton = ({
 				break
 
 			case 'core':
-				if (pressedButton && pressedButton.pathways) {
-					const pathwayWords = pressedButton.pathways.map(
-						(pathway) => pathway.id
-					)
-
-					const indexStart = buttonLayout.filter(
-						(button) =>
-							button.category === 'PATHWAY_WORDS' &&
-							button.category === 'MENU' &&
-							button.category === 'QUESTION_WORDS' &&
-							button.category === 'SOCIAL_WORDS'
-					).length
-
-					const newLayout = buttonLayout.map((button, index) => {
-						if (
-							button.category !== 'MENU' &&
-							button.category !== 'QUESTION_WORDS' &&
-							index >= indexStart &&
-							index - indexStart < pathwayWords.length
-						) {
-							return {
-								...button,
-								word: pathwayWords[index - indexStart],
-								category: 'PATHWAY_WORDS',
-							}
-						}
-						return button
-					})
-
-					setButtonLayout(newLayout)
-				}
+				setButtonLayout(WordData)
 				break
 
 			case 'phrases':
 				if (pressedButton && pressedButton.pathways) {
 					const pathwayWords = pressedButton.pathways.map(
-						(pathway) => pathway.id
+						(pathway) => pathway.word
 					)
 
 					const indexStart = buttonLayout.filter(
-						(button) =>
-							button.category === 'PATHWAY_WORDS' &&
-							button.category === 'MENU' &&
-							button.category === 'QUESTION_WORDS' &&
-							button.category === 'SOCIAL_WORDS'
+						(button) => button.category === 'PATHWAY_WORDS'
+						// button.category === 'PATHWAY_WORDS' &&
+						// button.category === 'MENU' &&
+						// button.category === 'QUESTION_WORDS' &&
+						// button.category === 'SOCIAL_WORDS'
 					).length
 
 					const newLayout = buttonLayout.map((button, index) => {
 						if (
 							button.category !== 'QUESTION_WORDS' &&
-							index >= indexStart &&
-							index - indexStart < pathwayWords.length
+							button.category !== 'SOCIAL_WORDS' &&
+							index >= indexStart
 						) {
 							return {
 								...button,
