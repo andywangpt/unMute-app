@@ -1,3 +1,10 @@
+// import { AppRegistry } from 'react-native'
+// import App from './App'
+// import { name as appName } from './app.json'
+
+// AppRegistry.registerComponent(appName, () => App)
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
+
 import React, { useState, useEffect, useRef } from 'react'
 import {
 	FlatList,
@@ -93,6 +100,7 @@ export default function App() {
 	}
 
 	return (
+		<GestureHandlerRootView style={{ flex: 1 }}>
 		<SafeAreaView style={styles.container}>
 			<View style={styles.yStack}>
 				<MenuTopRow
@@ -130,7 +138,12 @@ export default function App() {
 					<View style={styles.flatListContainer}>
 						<DraggableFlatList
 							data={buttonLayout}
-							renderItem={({ item, index, drag, isActive }) => (
+							renderItem={({
+								item,
+								index,
+								drag,
+								isActive,
+							}) => (
 								<WordButton
 									id={item.id}
 									text={item.word}
@@ -141,7 +154,7 @@ export default function App() {
 									// onLongPress={handleLongPress}
 									setButtonLayout={setButtonLayout}
 									showKeyboard={showKeyboard}
-									setShowKeyboard={setShowKeyboard}	
+									setShowKeyboard={setShowKeyboard}
 								/>
 							)}
 							keyExtractor={(item) => item.id}
@@ -151,7 +164,8 @@ export default function App() {
 					</View>
 				</View>
 			</View>
-		</SafeAreaView>
+			</SafeAreaView>
+		</GestureHandlerRootView>
 	)
 }
 

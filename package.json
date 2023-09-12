@@ -15,6 +15,8 @@
     "react": "18.2.0",
     "react-native": "^0.72.4",
     "react-native-draggable-flatlist": "^4.0.1",
+    "react-native-gesture-handler": "~2.12.0",
+    "react-native-reanimated": "~3.3.0",
     "react-native-restart": "^0.0.27"
   },
   "devDependencies": {
