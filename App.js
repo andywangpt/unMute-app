@@ -16,10 +16,10 @@ import { WordData } from './WordData.js'
 
 // console.disableYellowBox = true
 import { LogBox } from 'react-native'
+import DraggableFlatList from 'react-native-draggable-flatlist'
 
 // LogBox.ignoreLogs(['Warning: ...'])
 LogBox.ignoreAllLogs()
-
 
 const numCols = 11
 
@@ -31,11 +31,6 @@ export default function App() {
 	const [keyboardInput, setKeyboardInput] = useState('')
 
 	const inputRef = useRef(null)
-
-	// useEffect(() => {
-	// 	const words = buttonLayout.map((button) => button.word)
-	// 	setMenuLayout(MenuData)
-	// }, [buttonLayout])
 
 	useEffect(() => {
 		if (showKeyboard) {
@@ -93,6 +88,10 @@ export default function App() {
 		}
 	}
 
+	const handleDragEnd = ({ data }) => {
+		setButtonLayout(data)
+	}
+
 	return (
 		<SafeAreaView style={styles.container}>
 			<View style={styles.yStack}>
@@ -129,21 +128,25 @@ export default function App() {
 					</View>
 
 					<View style={styles.flatListContainer}>
-						<FlatList
+						<DraggableFlatList
 							data={buttonLayout}
-							renderItem={({ item }) => (
+							renderItem={({ item, index, drag, isActive }) => (
 								<WordButton
 									id={item.id}
 									text={item.word}
 									category={item.category}
 									setDisplayText={setDisplayText}
 									onDoublePress={handleDoublePress}
+									drag={drag}
 									// onLongPress={handleLongPress}
 									setButtonLayout={setButtonLayout}
+									showKeyboard={showKeyboard}
+									setShowKeyboard={setShowKeyboard}	
 								/>
 							)}
 							keyExtractor={(item) => item.id}
 							numColumns={numCols}
+							onDragEnd={handleDragEnd}
 						/>
 					</View>
 				</View>

@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react'
 
 import { View, Text, StyleSheet, Pressable } from 'react-native'
 
+import RNRestart from 'react-native-restart'
+
 import { WordData } from './WordData.js'
 import { buttonStyles } from './styles'
 import { getButtonColor } from './ButtonColor'
@@ -18,7 +20,6 @@ const SideMenuButton = ({
 	setShowKeyboard,
 	setKeyboardInput,
 }) => {
-	
 	useEffect(() => {
 		if (!showKeyboard) {
 			setKeyboardInput(editableText)
@@ -123,6 +124,7 @@ const SideMenuButton = ({
 	return (
 		<Pressable
 			onPress={() => handleMenuPress(text)}
+			onLongPress={() => RNRestart.Restart()}
 			style={({ pressed }) => [
 				getButtonColor(category, pressed),
 				buttonStyles.menuButton,

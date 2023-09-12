@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { StyleSheet, Text, View, Pressable, TextInput } from 'react-native'
+import {
+	StyleSheet,
+	Text,
+	View,
+	Pressable,
+	TextInput,
+} from 'react-native'
 import * as Speech from 'expo-speech'
 import { WordData } from './WordData'
 import { getButtonColor } from './ButtonColor'
@@ -14,6 +20,8 @@ export default function WordButton({
 	setDisplayText,
 	onDoublePress,
 	setButtonLayout,
+	showKeyboard,
+	setShowKeyboard,
 }) {
 	const [currentText, setCurrentText] = useState(text)
 	const [lastPressTime, setLastPressTime] = useState(0)
@@ -46,33 +54,37 @@ export default function WordButton({
 			setTimeoutId(id)
 		}
 		setLastPressTime(currentTime)
+		setShowKeyboard(false)
 	}
 
-	const handleLongPress = () => {
-		setIsEditing(true)
-	}
+	// const handleLongPress = () => {
+	// 	setIsEditing(true)
+	// }
 
-	function updateWordData(id, newText) {
-		// Find the index of the button with the matching id
-		const index = WordData.findIndex((button) => button.id === id)
+	// function updateWordData(id, newText) {
+	// 	// Find the index of the button with the matching id
+	// 	const index = WordData.findIndex((button) => button.id === id)
 
-		// If the button is found, update its word property
-		if (index !== -1) {
-			WordData[index].word = newText
-			setButtonLayout([...WordData])
+	// 	// If the button is found, update its word property
+	// 	if (index !== -1) {
+	// 		WordData[index].word = newText
+	// 		setButtonLayout([...WordData])
 
-		}
-	}
+	// 	}
+	// }
+
+	const handleLongPress = drag;
 
 	return (
 		<Pressable
-			onPress={() => handleWordButtonPress(text)}
+			// onPress={() => handleWordButtonPress(text)}
+			onPress={handleLongPress}
 			style={({ pressed }) => [
 				getButtonColor(category, pressed),
 				buttonStyles.button,
 			]}
 			onLongPress={handleLongPress}
-			delayLongPress={750}
+			delayLongPress={950}
 		>
 			<View justifyContent='center' alignItems='center'>
 				{isEditing ? (
