@@ -20,13 +20,14 @@ const MenuTopRow = ({
 	inputRef, // Receive inputRef
 	setButtonLayout,
 }) => {
-	
+
 	const dictateText = () => {
 		Speech.speak(displayText)
 	}
 
 	const handleHomeButtonPress = () => {
 		setButtonLayout(WordData)
+		console.log([WordData])
 	}
 
 	const handleHelloButtonPress = (word) => {

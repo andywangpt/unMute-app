@@ -14,23 +14,28 @@ import WordButton from './WordButton.js'
 import { MenuData } from './MenuData.js'
 import { WordData } from './WordData.js'
 
+// console.disableYellowBox = true
+import { LogBox } from 'react-native'
+
+// LogBox.ignoreLogs(['Warning: ...'])
+LogBox.ignoreAllLogs()
+
 
 const numCols = 11
 
 export default function App() {
-	
 	const [buttonLayout, setButtonLayout] = useState([...WordData])
 	const [menuLayout, setMenuLayout] = useState([...MenuData])
 	const [displayText, setDisplayText] = useState('')
 	const [showKeyboard, setShowKeyboard] = useState(false)
 	const [keyboardInput, setKeyboardInput] = useState('')
-	
+
 	const inputRef = useRef(null)
 
-	useEffect(() => {
-		const words = buttonLayout.map((button) => button.word)
-		setMenuLayout(MenuData)
-	}, [buttonLayout])
+	// useEffect(() => {
+	// 	const words = buttonLayout.map((button) => button.word)
+	// 	setMenuLayout(MenuData)
+	// }, [buttonLayout])
 
 	useEffect(() => {
 		if (showKeyboard) {
