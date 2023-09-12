@@ -70,22 +70,22 @@ const SideMenuButton = ({
 			case 'phrases':
 				if (pressedButton && pressedButton.pathways) {
 					const pathwayWords = pressedButton.pathways.map(
-						(pathway) => pathway.word
+						(pathway) => pathway.id
 					)
 
 					const indexStart = buttonLayout.filter(
-						(button) => button.category === 'PATHWAY_WORDS'
-						// button.category === 'PATHWAY_WORDS' &&
-						// button.category === 'MENU' &&
-						// button.category === 'QUESTION_WORDS' &&
-						// button.category === 'SOCIAL_WORDS'
+						(button) => button.category === 'PATHWAY_WORDS' &&
+						button.category === 'MENU' &&
+						button.category === 'QUESTION_WORDS' &&
+						button.category === 'SOCIAL_WORDS'
 					).length
 
 					const newLayout = buttonLayout.map((button, index) => {
 						if (
 							button.category !== 'QUESTION_WORDS' &&
 							button.category !== 'SOCIAL_WORDS' &&
-							index >= indexStart
+							index >= indexStart &&
+							index - indexStart < pathwayWords.length
 						) {
 							return {
 								...button,

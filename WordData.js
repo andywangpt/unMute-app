@@ -118,6 +118,8 @@ export const WordData = [
 			{ id: 'happy', coordinates: [1, 0] },
 			{ id: 'sad', coordinates: [1, 1] },
 			{ id: 'angry', coordinates: [1, 2] },
+			{ id: 'here', coordinates: [1, 2] },
+			{ id: 'there', coordinates: [1, 2] },
 		],
 	},
 

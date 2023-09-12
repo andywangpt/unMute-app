@@ -9,7 +9,7 @@ import {
 import * as Speech from 'expo-speech'
 import { WordData } from './WordData'
 import { getButtonColor } from './ButtonColor'
-import drag from 'react-native-draggable-flatlist' // This is the original import statement
+// import drag from 'react-native-draggable-flatlist' // This is the original import statement
 
 import { FontAwesome5 } from '@expo/vector-icons'
 import { buttonStyles } from './styles'
@@ -18,6 +18,7 @@ export default function WordButton({
 	id,
 	text,
 	category,
+	drag,
 	setDisplayText,
 	onDoublePress,
 	setButtonLayout,
@@ -58,30 +59,30 @@ export default function WordButton({
 		setShowKeyboard(false)
 	}
 
-	// const handleLongPress = () => {
-	// 	setIsEditing(true)
-	// }
-
-	// function updateWordData(id, newText) {
-	// 	// Find the index of the button with the matching id
-	// 	const index = WordData.findIndex((button) => button.id === id)
-
-	// 	// If the button is found, update its word property
-	// 	if (index !== -1) {
-	// 		WordData[index].word = newText
-	// 		setButtonLayout([...WordData])
-
-	// 	}
-	// }
-
-	function handleLongPress() {
-		drag()
-		console.log('drag')
+	const handleLongPress = () => {
+		setIsEditing(true)
 	}
+
+	function updateWordData(id, newText) {
+		// Find the index of the button with the matching id
+		const index = WordData.findIndex((button) => button.id === id)
+
+		// If the button is found, update its word property
+		if (index !== -1) {
+			WordData[index].word = newText
+			setButtonLayout([...WordData])
+
+		}
+	}
+
+	// function handleLongPress() {
+	// 	drag()
+	// 	console.log('drag')
+	// }
 
 	return (
 		<Pressable
-			// onPress={handleLongPress}
+			onPress={handleWordButtonPress}
 			style={({ pressed }) => [
 				getButtonColor(category, pressed),
 				buttonStyles.button,
