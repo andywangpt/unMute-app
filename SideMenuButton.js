@@ -18,6 +18,7 @@ const SideMenuButton = ({
 	setShowKeyboard,
 	setKeyboardInput,
 }) => {
+	
 	useEffect(() => {
 		if (!showKeyboard) {
 			setKeyboardInput(editableText)

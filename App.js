@@ -29,7 +29,7 @@ export default function App() {
 
 	useEffect(() => {
 		const words = buttonLayout.map((button) => button.word)
-		console.log(words)
+		setMenuLayout(MenuData)
 	}, [buttonLayout])
 
 	useEffect(() => {
@@ -128,6 +128,7 @@ export default function App() {
 							data={buttonLayout}
 							renderItem={({ item }) => (
 								<WordButton
+									id={item.id}
 									text={item.word}
 									category={item.category}
 									setDisplayText={setDisplayText}

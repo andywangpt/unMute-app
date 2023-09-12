@@ -63,7 +63,7 @@ export const MenuData = [
 	{
 		id: 'phrases',
 		word: 'phrases',
-		category: 'PATHWAY_WORDS',
+		category: 'MENU',
 		index: [0, 2],
 		pathways: [
 			{ id: '1', word: '1' },
