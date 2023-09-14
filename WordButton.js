@@ -70,7 +70,7 @@ export default function WordButton({
 		// If the button is found, update its word property
 		if (index !== -1) {
 			WordData[index].word = newText
-			setButtonLayout([...WordData])
+			// setButtonLayout([...WordData])
 
 		}
 	}
@@ -103,7 +103,7 @@ export default function WordButton({
 						style={buttonStyles.buttonText}
 					/>
 				) : (
-					<Text style={buttonStyles.buttonText}>{text}</Text>
+					<Text style={buttonStyles.buttonText}>{currentText}</Text>
 				)}
 			</View>
 		</Pressable>
