@@ -18,7 +18,9 @@ const SideMenuButton = ({
 	displayText,
 	showKeyboard,
 	setShowKeyboard,
-	setKeyboardInput,
+   setKeyboardInput,
+   buttonWidth,
+   buttonHeight,
 }) => {
 	useEffect(() => {
 		if (!showKeyboard) {
@@ -128,13 +130,14 @@ const SideMenuButton = ({
 			style={({ pressed }) => [
 				getButtonColor(category, pressed),
 				buttonStyles.menuButton,
+				{ width: buttonWidth, height: buttonHeight },
 			]}
 		>
-			<View justifyContent='center' alignItems='center'>
+			<View justifyContent="center" alignItems="center">
 				<Text style={buttonStyles.buttonText}>{text}</Text>
 			</View>
 		</Pressable>
-	)
+	);
 }
 
 const styles = StyleSheet.create({
@@ -152,7 +155,7 @@ const styles = StyleSheet.create({
 		margin: 0.5,
 		padding: 0,
 		height: 75,
-		width: '8.18%',
+		// width: '8.18%',
 		borderRadius: 10,
 		borderWidth: 1,
 		borderColor: 'black',

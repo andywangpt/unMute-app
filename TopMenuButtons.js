@@ -11,15 +11,18 @@ import * as Speech from "expo-speech";
 
 import { WordData } from "./WordData.js";
 
-const MenuTopRow = ({
+const TopMenuButtons = ({
 	displayText,
 	setDisplayText,
 	showKeyboard, // Receive showKeyboard prop
 	setKeyboardInput, // Receive setKeyboardInput
 	keyboardInput, // Receive keyboardInput
 	inputRef, // Receive inputRef
-	setButtonLayout,
+   setButtonLayout,
+   buttonWidth,
+   buttonHeight,
 }) => {
+
 	const dictateText = () => {
 		Speech.speak(displayText);
 	};
@@ -34,7 +37,14 @@ const MenuTopRow = ({
 			return prevText + " Hi, I am Andy.";
 		});
 		Speech.speak(" Hi, I'm Andy.");
-	};
+   };
+   
+   // const dynamicStyles = {
+	// 		menuButton: {
+	// 			...styles.menuButton,
+	// 			width: buttonWidth,
+	// 		},
+	// 	};
 
 	const getDynamicFontSize = (text) => {
 		const wordCount = text.split(" ").length + 2;
@@ -63,19 +73,31 @@ const MenuTopRow = ({
 		<View style={styles.xStack}>
 			<TouchableOpacity
 				onPress={handleHomeButtonPress}
-				style={styles.menuButton}
+				style={[
+					styles.menuButton,
+					{ width: buttonWidth, height: buttonHeight },
+				]}
 			>
 				<Text style={styles.buttonText}>🏠</Text>
 			</TouchableOpacity>
 
 			<TouchableOpacity
-				style={styles.menuButton}
+				style={[
+					styles.menuButton,
+					{ width: buttonWidth, height: buttonHeight },
+				]}
 				onPress={handleHelloButtonPress}
 			>
 				<Text style={styles.buttonText}>👋🏼</Text>
 			</TouchableOpacity>
 
-			<TouchableOpacity style={styles.displayStyle} onPress={dictateText}>
+			<TouchableOpacity
+				style={[
+					styles.displayStyle,
+					{ height: buttonHeight },
+				]}
+				onPress={dictateText}
+			>
 				<TextInput
 					ref={inputRef}
 					style={[
@@ -83,6 +105,7 @@ const MenuTopRow = ({
 							fontSize: getDynamicFontSize(
 								showKeyboard ? keyboardInput : displayText
 							),
+							height: buttonHeight,
 						},
 					]}
 					value={showKeyboard ? keyboardInput : displayText}
@@ -96,17 +119,32 @@ const MenuTopRow = ({
 				/>
 			</TouchableOpacity>
 
-			<TouchableOpacity style={styles.menuButton} onPress={deleteLastWord}>
+			<TouchableOpacity
+				style={[
+					styles.menuButton,
+					{ width: buttonWidth, height: buttonHeight },
+				]}
+				onPress={deleteLastWord}
+			>
 				<Text style={styles.buttonText}>⬅️</Text>
 			</TouchableOpacity>
 
-			<TouchableOpacity style={styles.menuButton} onPress={clearDisplayText}>
+			<TouchableOpacity
+				style={[
+					styles.menuButton,
+					{ width: buttonWidth, height: buttonHeight },
+				]}
+				onPress={clearDisplayText}
+			>
 				<Text style={styles.buttonText}>X</Text>
 			</TouchableOpacity>
 
 			<TouchableOpacity
 				onPress={handleHomeButtonPress}
-				style={styles.menuButton}
+				style={[
+					styles.menuButton,
+					{ width: buttonWidth, height: buttonHeight },
+				]}
 			>
 				<Text style={styles.buttonText}>🏠</Text>
 			</TouchableOpacity>
@@ -131,7 +169,7 @@ const styles = StyleSheet.create({
 		margin: 1,
 		padding: 0,
 		height: 80,
-		width: "8.18%",
+		// width: buttonWidth,
 		borderRadius: 10,
 		borderWidth: 1,
 		borderColor: "black",
@@ -144,13 +182,16 @@ const styles = StyleSheet.create({
 	displayStyle: {
 		justifyContent: "center",
 		alignItems: "center",
-		height: 80,
+		// height: 80,
 		backgroundColor: "#F0EFEB",
-		margin: 3,
-		marginBottom: 0,
-		width: "57.5%",
-		borderRadius: 10,
+      marginLeft: 3,
+      marginRight: 3,
+		marginBottom: 1,
+		width: "57.9%",
+      borderRadius: 10,
+      borderColor: "black",
+      borderWidth: 1,
 	},
 });
 
-export default MenuTopRow;
+export default TopMenuButtons;
