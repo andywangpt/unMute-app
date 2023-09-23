@@ -1,4 +1,4 @@
-export const MenuData = [
+export const MenuButtonData = [
 	{
 		id: "#",
 		word: "#",
@@ -66,18 +66,19 @@ export const MenuData = [
 		category: "MENU",
 		index: [0, 2],
 		pathways: [
+			{ id: "ok", coordinates: [1, 0] },
+			{ id: "cool", coordinates: [1, 0] },
+			{ id: "ok", coordinates: [1, 0] },
+			{ id: "cool", coordinates: [1, 0] },
+			{ id: "ok", coordinates: [1, 0] },
+			{ id: "ok", coordinates: [1, 0] },
+			{ id: "ok", coordinates: [1, 0] },
 			{ id: "", coordinates: [1, 0] },
 			{ id: "", coordinates: [1, 0] },
 			{ id: "", coordinates: [1, 0] },
 			{ id: "", coordinates: [1, 0] },
-			{ id: "", coordinates: [1, 0] },
-			{ id: "", coordinates: [1, 0] },
-			{ id: "", coordinates: [1, 0] },
-			{ id: "", coordinates: [1, 0] },
-			{ id: "", coordinates: [1, 0] },
-			{ id: "", coordinates: [1, 0] },
-			{ id: "", coordinates: [1, 0] },
-			{ id: "10", coordinates: [1, 0] },
+
+			{ id: "Who are you?", coordinates: [1, 0] },
 
 			{ id: "20", coordinates: [1, 0] },
 
@@ -91,29 +92,55 @@ export const MenuData = [
 
 			{ id: "70", coordinates: [1, 0] },
 
-			{ id: "What are you working on?", coordinates: [1, 0] },
+			{ id: "What time is it?", coordinates: [1, 0] },
 
 			{ id: "90", coordinates: [1, 0] },
-			{ id: "", coordinates: [1, 0] },
+
 			{ id: "", coordinates: [1, 0] },
 
-			{ id: "10", coordinates: [1, 0] },
+			{ id: "", coordinates: [1, 0] },
 
-			{ id: "20", coordinates: [1, 0] },
+			{ id: "Who do you know here?", coordinates: [1, 0] },
+
+			{ id: "How long have you been working on this?", coordinates: [1, 0] },
 
 			{ id: "30", coordinates: [1, 0] },
 
 			{ id: "40", coordinates: [1, 0] },
 
-			{ id: "50", coordinates: [1, 0] },
+			{ id: "When do you start working on this?", coordinates: [1, 0] },
 
-			{ id: "60", coordinates: [1, 0] },
+			{ id: "How much more?", coordinates: [1, 0] },
 
-			{ id: "70", coordinates: [1, 0] },
+			{ id: "Where do you live?", coordinates: [1, 0] },
 
 			{ id: "What are you working on?", coordinates: [1, 0] },
 
-			{ id: "90", coordinates: [1, 0] },
+			{ id: "Which one do you like better?", coordinates: [1, 0] },
+
+			{ id: "", coordinates: [1, 0] },
+
+			{ id: "", coordinates: [1, 0] },
+
+			{ id: "Who do you know here?", coordinates: [1, 0] },
+
+			{ id: "How long have you been working on this?", coordinates: [1, 0] },
+
+			{ id: "30", coordinates: [1, 0] },
+
+			{ id: "40", coordinates: [1, 0] },
+
+			{ id: "When do you start working on this?", coordinates: [1, 0] },
+
+			{ id: "How much", coordinates: [1, 0] },
+
+			{ id: "Where do you live?", coordinates: [1, 0] },
+
+			{ id: "What are you working on?", coordinates: [1, 0] },
+
+			{ id: "Which one do you like better?", coordinates: [1, 0] },
+
+			{ id: "", coordinates: [1, 0] },
 		],
 	},
 	{

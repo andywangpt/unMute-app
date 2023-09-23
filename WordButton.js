@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, Text, View, Pressable, TextInput } from "react-native";
+import { Text, View, Pressable, TextInput } from "react-native";
 import * as Speech from "expo-speech";
 import { WordData } from "./WordData";
 import { getButtonColor } from "./ButtonColor";
-// import drag from 'react-native-draggable-flatlist' // This is the original import statement
 
-import { FontAwesome5 } from "@expo/vector-icons";
+import drag from 'react-native-draggable-flatlist' // This is the original import statement
+
+// import { FontAwesome5 } from "@expo/vector-icons";
 import { buttonStyles } from "./styles";
 
 export default function WordButton({

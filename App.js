@@ -14,7 +14,7 @@ import TopMenuButtons from "./TopMenuButtons.js";
 import SideMenuButton from "./SideMenuButton.js";
 import WordButton from "./WordButton.js";
 
-import { MenuData } from "./MenuData.js";
+import { MenuButtonData } from "./MenuButtonData.js";
 import { WordData } from "./WordData.js";
 
 import { LogBox } from "react-native";
@@ -28,16 +28,16 @@ const numRows = 9;
 const screenWidth = Dimensions.get("window").width;
 const screenHeight = Dimensions.get("window").height;
 
-const buttonMargin = 1; 
-
-const buttonWidth = screenWidth / numCols - 2 * buttonMargin; 
+const buttonMargin = 1;
+//asl
+const buttonWidth = screenWidth / numCols - 2 * buttonMargin;
 const buttonHeight = screenHeight / numRows - 2 * buttonMargin - 5;
 
 console.log("buttonheight", buttonHeight);
 
 export default function App() {
 	const [buttonLayout, setButtonLayout] = useState([...WordData]);
-	const [menuLayout, setMenuLayout] = useState([...MenuData]);
+	const [menuLayout, setMenuLayout] = useState([...MenuButtonData]);
 	const [displayText, setDisplayText] = useState("");
 	const [showKeyboard, setShowKeyboard] = useState(false);
 	const [keyboardInput, setKeyboardInput] = useState("");
@@ -184,16 +184,18 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 	},
 	flatListContainer: {
-      width: "100%",
-      marginLeft: 1,
+		width: "100%",
+		marginLeft: 1,
 	},
 	menuContainer: {
 		width: "8.18%",
+		marginTop: 1,
 	},
 	xStack: {
 		flexDirection: "row",
 		width: "100%",
 		flex: 1,
 		padding: 1,
+		// margin: 1,
 	},
 });
