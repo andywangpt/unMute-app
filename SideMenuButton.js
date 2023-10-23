@@ -8,7 +8,7 @@ import RNRestart from "react-native-restart";
 import { WordData } from "./WordData.js";
 import { buttonStyles } from "./styles";
 import { getButtonColor } from "./ButtonColor";
-import { MenuData } from "./MenuButtonData.js";
+import { MenuButtonData } from "./MenuButtonData.js";
 
 const SideMenuButton = ({
 	text,
@@ -31,7 +31,7 @@ const SideMenuButton = ({
 	const [editableText, setEditableText] = useState(displayText);
 
 	const handleMenuPress = () => {
-		const pressedButton = MenuData.find((button) => button.word === text);
+		const pressedButton = MenuButtonData.find((button) => button.word === text);
 
 		switch (text) {
 			case "#":
