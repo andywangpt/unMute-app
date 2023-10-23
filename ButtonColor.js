@@ -1,14 +1,18 @@
 import { StyleSheet } from 'react-native'
 import { buttonStyles } from './styles.js'
+import { themes } from './themes.js'
 
-export const getButtonColor = (category, pressed) => {
+export const getButtonColor = (category, pressed, currentThemeIndex) => {
+	const theme = themes[currentThemeIndex]
+	console.log("currentThemeIndex ", currentThemeIndex)
+
 	if (category === 'MENU') {
 		return [
 			buttonStyles.button,
 			{
 				backgroundColor: pressed
-					? '#f1ffff'
-					: '#636f6f',
+					? theme.ifPressed
+					: theme.menuColor,
 			},
 		]
 	}
@@ -17,9 +21,7 @@ export const getButtonColor = (category, pressed) => {
 		return [
 			buttonStyles.button,
 			{
-				backgroundColor: pressed
-					? '#f1ffff'
-					: '#ffaa00',
+				backgroundColor: pressed ? '#f1ffff' : '#ffaa00',
 			},
 		]
 	}
@@ -28,9 +30,7 @@ export const getButtonColor = (category, pressed) => {
 		return [
 			buttonStyles.button,
 			{
-				backgroundColor: pressed
-					? '#f1ffff'
-					: '#8a9b9b',
+				backgroundColor: pressed ? '#f1ffff' : '#8a9b9b',
 			},
 		]
 	}
@@ -39,9 +39,7 @@ export const getButtonColor = (category, pressed) => {
 		return [
 			buttonStyles.button,
 			{
-				backgroundColor: pressed
-					? '#f1ffff'
-					: '#c5dedd',
+				backgroundColor: pressed ? '#f1ffff' : '#c5dedd',
 			},
 		]
 	}
@@ -50,9 +48,7 @@ export const getButtonColor = (category, pressed) => {
 		return [
 			buttonStyles.button,
 			{
-				backgroundColor: pressed
-					? '#f1ffff'
-					: '#dbe7e4',
+				backgroundColor: pressed ? '#f1ffff' : '#dbe7e4',
 			},
 		]
 	}
@@ -61,9 +57,7 @@ export const getButtonColor = (category, pressed) => {
 		return [
 			buttonStyles.button,
 			{
-				backgroundColor: pressed
-					? '#f1ffff'
-					: '#f3f8f8',
+				backgroundColor: pressed ? '#f1ffff' : '#f3f8f8',
 			},
 		]
 	}
@@ -72,9 +66,7 @@ export const getButtonColor = (category, pressed) => {
 		return [
 			buttonStyles.button,
 			{
-				backgroundColor: pressed
-					? '#f1ffff'
-					: '#dcebeb',
+				backgroundColor: pressed ? '#f1ffff' : '#dcebeb',
 			},
 		]
 	}
@@ -83,9 +75,7 @@ export const getButtonColor = (category, pressed) => {
 		return [
 			buttonStyles.button,
 			{
-				backgroundColor: pressed
-					? '#f1ffff'
-					: '#c5dedd',
+				backgroundColor: pressed ? '#f1ffff' : '#c5dedd',
 			},
 		]
 	}
@@ -94,9 +84,7 @@ export const getButtonColor = (category, pressed) => {
 		return [
 			buttonStyles.button,
 			{
-				backgroundColor: pressed
-					? '#f1ffff'
-					: '#9eb2b1',
+				backgroundColor: pressed ? '#f1ffff' : '#9eb2b1',
 			},
 		]
 	}
@@ -104,9 +92,7 @@ export const getButtonColor = (category, pressed) => {
 		return [
 			buttonStyles.button,
 			{
-				backgroundColor: pressed
-					? '#f1ffff'
-					: '#768585',
+				backgroundColor: pressed ? '#f1ffff' : '#768585',
 			},
 		]
 	}
@@ -114,18 +100,14 @@ export const getButtonColor = (category, pressed) => {
 		return [
 			buttonStyles.button,
 			{
-				backgroundColor: pressed
-					? '#f1ffff'
-					: '#ffeecc',
+				backgroundColor: pressed ? '#f1ffff' : '#ffeecc',
 			},
 		]
 	} else {
 		return [
 			buttonStyles.button,
 			{
-				backgroundColor: pressed
-					? '#f1ffff'
-					: '#768585',
+				backgroundColor: pressed ? '#f1ffff' : '#768585',
 			},
 		]
 	}

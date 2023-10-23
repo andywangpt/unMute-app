@@ -10,6 +10,8 @@ import {
 	Dimensions,
 } from 'react-native'
 
+import themes from './themes.js'
+
 import TopMenuButtons from './TopMenuButtons.js'
 import SideMenuButton from './SideMenuButton.js'
 import WordButton from './WordButton.js'
@@ -17,10 +19,7 @@ import WordButton from './WordButton.js'
 import { MenuButtonData } from './MenuButtonData.js'
 import { WordData } from './WordData.js'
 
-import { LogBox } from 'react-native'
 import DraggableFlatList from 'react-native-draggable-flatlist'
-
-LogBox.ignoreAllLogs()
 
 const numCols = 12
 const numRows = 9
@@ -43,6 +42,14 @@ export default function App() {
 	const [keyboardInput, setKeyboardInput] = useState('')
 
 	const inputRef = useRef(null)
+
+	const [currentThemeIndex, setCurrentThemeIndex] = useState(0)
+
+	const changeTheme = () => {
+		setCurrentThemeIndex(
+			(prevIndex) => (prevIndex + 1) % themes.length
+		)
+	}
 
 	useEffect(() => {
 		if (showKeyboard) {
@@ -138,6 +145,7 @@ export default function App() {
 										keyboardInput={keyboardInput}
 										buttonWidth={buttonWidth}
 										buttonHeight={buttonHeight}
+										currentThemeIndex={currentThemeIndex}
 									/>
 								)}
 								keyExtractor={(item) => item.id}
