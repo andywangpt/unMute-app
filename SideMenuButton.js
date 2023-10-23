@@ -9,7 +9,7 @@ import { WordData } from './WordData.js'
 import { buttonStyles } from './styles'
 import { getButtonColor } from './ButtonColor'
 import { MenuButtonData } from './MenuButtonData.js'
-import { themes } from './themes.js'
+import { ColorThemes } from './ColorThemes.js'
 
 const SideMenuButton = ({
 	text,
@@ -22,7 +22,9 @@ const SideMenuButton = ({
 	setKeyboardInput,
 	buttonWidth,
 	buttonHeight,
-	currentThemeIndex
+	currentThemeIndex,
+	setCurrentThemeIndex,
+	changeTheme,
 }) => {
 	useEffect(() => {
 		if (!showKeyboard) {
@@ -121,14 +123,17 @@ const SideMenuButton = ({
 				break
 
 			case 'theme':
-				
-				changeTheme(changeTheme)
+				// setCurrentThemeIndex(currentThemeIndex++)
+				console.log('button press')
+				setCurrentThemeIndex(
+					(prevIndex) =>
+						(prevIndex + 1) % ColorThemes.length
+				)
 				break
 
 			default:
 				break
 		}
-		console.log('handleMenuPress: ', text)
 	}
 
 	return (
@@ -136,7 +141,7 @@ const SideMenuButton = ({
 			onPress={() => handleMenuPress(text)}
 			onLongPress={() => RNRestart.Restart()}
 			style={({ pressed }) => [
-				getButtonColor(category, pressed),
+				getButtonColor(category, pressed, currentThemeIndex),
 				buttonStyles.menuButton,
 				{ width: buttonWidth, height: buttonHeight },
 			]}

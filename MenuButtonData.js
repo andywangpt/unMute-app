@@ -185,7 +185,7 @@ export const MenuButtonData = [
 	},
 	{
 		id: 'theme',
-		word: 'change theme',
+		word: 'theme',
 		category: 'MENU',
 		index: [0, 5],
 		pathways: [],

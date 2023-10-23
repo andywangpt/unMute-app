@@ -10,7 +10,7 @@ import {
 	Dimensions,
 } from 'react-native'
 
-import themes from './themes.js'
+import ColorThemes from './ColorThemes.js'
 
 import TopMenuButtons from './TopMenuButtons.js'
 import SideMenuButton from './SideMenuButton.js'
@@ -43,13 +43,14 @@ export default function App() {
 
 	const inputRef = useRef(null)
 
-	const [currentThemeIndex, setCurrentThemeIndex] = useState(0)
+	const [currentThemeIndex, setCurrentThemeIndex] = useState('0')
 
-	const changeTheme = () => {
-		setCurrentThemeIndex(
-			(prevIndex) => (prevIndex + 1) % themes.length
-		)
-	}
+	// const changeTheme = () => {
+	// 	console.log('changeTheme')
+	// 	setCurrentThemeIndex(
+	// 		(prevIndex) => (prevIndex + 1) % ColorThemes.length
+	// 	)
+	// }
 
 	useEffect(() => {
 		if (showKeyboard) {
@@ -125,6 +126,7 @@ export default function App() {
 						inputRef={inputRef}
 						buttonWidth={buttonWidth}
 						buttonHeight={buttonHeight}
+						currentThemeIndex={currentThemeIndex}
 					/>
 
 					<View style={styles.xStack}>
@@ -146,6 +148,10 @@ export default function App() {
 										buttonWidth={buttonWidth}
 										buttonHeight={buttonHeight}
 										currentThemeIndex={currentThemeIndex}
+										setCurrentThemeIndex={
+											setCurrentThemeIndex
+										}
+								
 									/>
 								)}
 								keyExtractor={(item) => item.id}
@@ -174,6 +180,10 @@ export default function App() {
 										setShowKeyboard={setShowKeyboard}
 										buttonWidth={buttonWidth}
 										buttonHeight={buttonHeight}
+										currentThemeIndex={currentThemeIndex}
+										setCurrentThemeIndex={
+											setCurrentThemeIndex
+										}
 									/>
 								)}
 								keyExtractor={(item) => item.id}

@@ -1,15 +1,16 @@
-import { useState, useEffect, useRef, React } from "react";
+import { useState, useEffect, useRef, React } from 'react'
 import {
 	View,
 	Text,
 	TouchableOpacity,
 	StyleSheet,
 	TextInput,
-} from "react-native";
+} from 'react-native'
 
-import * as Speech from "expo-speech";
+import * as Speech from 'expo-speech'
 
-import { WordData } from "./WordData.js";
+import { ColorThemes } from './ColorThemes.js'
+import { WordData } from './WordData.js'
 
 const TopMenuButtons = ({
 	displayText,
@@ -18,56 +19,49 @@ const TopMenuButtons = ({
 	setKeyboardInput, // Receive setKeyboardInput
 	keyboardInput, // Receive keyboardInput
 	inputRef, // Receive inputRef
-   setButtonLayout,
-   buttonWidth,
-   buttonHeight,
+	setButtonLayout,
+	buttonWidth,
+	buttonHeight,
+	currentThemeIndex = 0,
 }) => {
-
 	const dictateText = () => {
-		Speech.speak(displayText);
-	};
+		Speech.speak(displayText)
+	}
 
 	const handleHomeButtonPress = () => {
-		setButtonLayout(WordData);
-		console.log([WordData]);
-	};
+		setButtonLayout(WordData)
+		console.log([WordData])
+	}
 
 	const handleHelloButtonPress = (word) => {
 		setDisplayText((prevText) => {
-			return prevText + " Hi, I am Andy.";
-		});
-		Speech.speak(" Hi, I'm Andy.");
-   };
-   
-   // const dynamicStyles = {
-	// 		menuButton: {
-	// 			...styles.menuButton,
-	// 			width: buttonWidth,
-	// 		},
-	// 	};
+			return prevText + ' Hi, I am Andy.'
+		})
+		Speech.speak(" Hi, I'm Andy.")
+	}
 
 	const getDynamicFontSize = (text) => {
-		const wordCount = text.split(" ").length + 2;
-		if (wordCount <= 1) return 80;
-		if (wordCount <= 3) return 100;
-		if (wordCount <= 5) return 60;
-		if (wordCount <= 7) return 50;
-		if (wordCount <= 9) return 40;
-		return 25;
-	};
+		const wordCount = text.split(' ').length + 2
+		if (wordCount <= 1) return 80
+		if (wordCount <= 3) return 100
+		if (wordCount <= 5) return 60
+		if (wordCount <= 7) return 50
+		if (wordCount <= 9) return 40
+		return 25
+	}
 
 	const deleteLastWord = () => {
 		setDisplayText((prevText) => {
-			const words = prevText.trim().split(" ");
-			if (words.length <= 1) return "";
-			words.pop();
-			return words.join(" ");
-		});
-	};
+			const words = prevText.trim().split(' ')
+			if (words.length <= 1) return ''
+			words.pop()
+			return words.join(' ')
+		})
+	}
 
 	const clearDisplayText = () => {
-		setDisplayText("");
-	};
+		setDisplayText('')
+	}
 
 	return (
 		<View style={styles.xStack}>
@@ -92,10 +86,7 @@ const TopMenuButtons = ({
 			</TouchableOpacity>
 
 			<TouchableOpacity
-				style={[
-					styles.displayStyle,
-					{ height: buttonHeight },
-				]}
+				style={[styles.displayStyle, { height: buttonHeight }]}
 				onPress={dictateText}
 			>
 				<TextInput
@@ -111,9 +102,9 @@ const TopMenuButtons = ({
 					value={showKeyboard ? keyboardInput : displayText}
 					onChangeText={(text) => {
 						if (showKeyboard) {
-							setKeyboardInput(text);
+							setKeyboardInput(text)
 						} else {
-							setDisplayText(text);
+							setDisplayText(text)
 						}
 					}}
 				/>
@@ -149,49 +140,49 @@ const TopMenuButtons = ({
 				<Text style={styles.buttonText}>🏠</Text>
 			</TouchableOpacity>
 		</View>
-	);
-};
+	)
+}
 
 const styles = StyleSheet.create({
 	xStack: {
-		flexDirection: "row",
-		width: "100%",
-		justifyContent: "center",
-		alignItems: "center",
+		flexDirection: 'row',
+		width: '100%',
+		justifyContent: 'center',
+		alignItems: 'center',
 		marginTop: 2,
 		margin: 1,
 		marginBottom: 0,
-		backgroundColor: "#2e3a43",
+		backgroundColor: '#2e3a43',
 	},
 	menuButton: {
-		justifyContent: "center",
-		alignItems: "center",
+		justifyContent: 'center',
+		alignItems: 'center',
 		margin: 1,
 		padding: 0,
 		height: 80,
 		// width: buttonWidth,
 		borderRadius: 10,
 		borderWidth: 1,
-		borderColor: "black",
-		backgroundColor: "#636f6f",
+		borderColor: 'black',
+		backgroundColor: ColorThemes[1].menuColor,
 	},
 	buttonText: {
 		fontSize: 15,
-		justifyContent: "center",
+		justifyContent: 'center',
 	},
 	displayStyle: {
-		justifyContent: "center",
-		alignItems: "center",
+		justifyContent: 'center',
+		alignItems: 'center',
 		// height: 80,
-		backgroundColor: "#F0EFEB",
-      marginLeft: 3,
-      marginRight: 3,
+		backgroundColor: '#F0EFEB',
+		marginLeft: 3,
+		marginRight: 3,
 		marginBottom: 1,
-		width: "57.9%",
-      borderRadius: 10,
-      borderColor: "black",
-      borderWidth: 1,
+		width: '57.9%',
+		borderRadius: 10,
+		borderColor: 'black',
+		borderWidth: 1,
 	},
-});
+})
 
-export default TopMenuButtons;
+export default TopMenuButtons

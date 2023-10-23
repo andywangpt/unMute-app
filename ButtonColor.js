@@ -1,10 +1,20 @@
 import { StyleSheet } from 'react-native'
 import { buttonStyles } from './styles.js'
-import { themes } from './themes.js'
+import { ColorThemes } from './ColorThemes.js'
 
-export const getButtonColor = (category, pressed, currentThemeIndex) => {
-	const theme = themes[currentThemeIndex]
-	console.log("currentThemeIndex ", currentThemeIndex)
+export const getButtonColor = (
+	category,
+	pressed,
+	currentThemeIndex,
+	setCurrentThemeIndex,
+) => {
+
+	// if (!currentThemeIndex) {
+	// 	setCurrentThemeIndex(0)
+	// }
+
+	const theme = ColorThemes[currentThemeIndex]
+	console.log('currentThemeIndex ', currentThemeIndex)
 
 	if (category === 'MENU') {
 		return [
@@ -21,7 +31,9 @@ export const getButtonColor = (category, pressed, currentThemeIndex) => {
 		return [
 			buttonStyles.button,
 			{
-				backgroundColor: pressed ? '#f1ffff' : '#ffaa00',
+				backgroundColor: pressed
+					? theme.ifPressed
+					: theme.QUESTION_WORDS,
 			},
 		]
 	}
@@ -30,7 +42,9 @@ export const getButtonColor = (category, pressed, currentThemeIndex) => {
 		return [
 			buttonStyles.button,
 			{
-				backgroundColor: pressed ? '#f1ffff' : '#8a9b9b',
+				backgroundColor: pressed
+					? theme.ifPressed
+					: theme.WHO_WORDS,
 			},
 		]
 	}
@@ -39,7 +53,9 @@ export const getButtonColor = (category, pressed, currentThemeIndex) => {
 		return [
 			buttonStyles.button,
 			{
-				backgroundColor: pressed ? '#f1ffff' : '#c5dedd',
+				backgroundColor: pressed
+					? theme.ifPressed
+					: theme.HOW_WORDS,
 			},
 		]
 	}
@@ -48,7 +64,9 @@ export const getButtonColor = (category, pressed, currentThemeIndex) => {
 		return [
 			buttonStyles.button,
 			{
-				backgroundColor: pressed ? '#f1ffff' : '#dbe7e4',
+				backgroundColor: pressed
+					? theme.ifPressed
+					: theme.WHAT_WORDS,
 			},
 		]
 	}
@@ -57,7 +75,9 @@ export const getButtonColor = (category, pressed, currentThemeIndex) => {
 		return [
 			buttonStyles.button,
 			{
-				backgroundColor: pressed ? '#f1ffff' : '#f3f8f8',
+				backgroundColor: pressed
+					? theme.ifPressed
+					: theme.WHEN_WORDS,
 			},
 		]
 	}
@@ -66,7 +86,9 @@ export const getButtonColor = (category, pressed, currentThemeIndex) => {
 		return [
 			buttonStyles.button,
 			{
-				backgroundColor: pressed ? '#f1ffff' : '#dcebeb',
+				backgroundColor: pressed
+					? theme.ifPressed
+					: theme.HOWMUCH_WORDS,
 			},
 		]
 	}
@@ -75,7 +97,9 @@ export const getButtonColor = (category, pressed, currentThemeIndex) => {
 		return [
 			buttonStyles.button,
 			{
-				backgroundColor: pressed ? '#f1ffff' : '#c5dedd',
+				backgroundColor: pressed
+					? theme.ifPressed
+					: theme.WHERE_WORDS,
 			},
 		]
 	}
@@ -84,7 +108,9 @@ export const getButtonColor = (category, pressed, currentThemeIndex) => {
 		return [
 			buttonStyles.button,
 			{
-				backgroundColor: pressed ? '#f1ffff' : '#9eb2b1',
+				backgroundColor: pressed
+					? theme.ifPressed
+					: theme.WHICH_WORDS,
 			},
 		]
 	}
@@ -92,7 +118,9 @@ export const getButtonColor = (category, pressed, currentThemeIndex) => {
 		return [
 			buttonStyles.button,
 			{
-				backgroundColor: pressed ? '#f1ffff' : '#768585',
+				backgroundColor: pressed
+					? theme.ifPressed
+					: theme.SOCIAL_WORDS,
 			},
 		]
 	}
@@ -100,7 +128,9 @@ export const getButtonColor = (category, pressed, currentThemeIndex) => {
 		return [
 			buttonStyles.button,
 			{
-				backgroundColor: pressed ? '#f1ffff' : '#ffeecc',
+				backgroundColor: pressed
+					? theme.ifPressed
+					: theme.PATHWAY_WORDS,
 			},
 		]
 	} else {
