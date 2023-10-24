@@ -6,15 +6,9 @@ export const getButtonColor = (
 	category,
 	pressed,
 	currentThemeIndex,
-	setCurrentThemeIndex,
 ) => {
 
-	// if (!currentThemeIndex) {
-	// 	setCurrentThemeIndex(0)
-	// }
-
 	const theme = ColorThemes[currentThemeIndex]
-	console.log('currentThemeIndex ', currentThemeIndex)
 
 	if (category === 'MENU') {
 		return [

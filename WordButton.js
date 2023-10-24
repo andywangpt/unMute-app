@@ -82,7 +82,7 @@ export default function WordButton({
 		<Pressable
 			onPress={handleWordButtonPress}
 			style={({ pressed }) => [
-				getButtonColor(category, pressed, currentThemeIndex, setCurrentThemeIndex),
+				getButtonColor(category, pressed, currentThemeIndex),
 				buttonStyles.button,
 				{ width: buttonWidth, height: buttonHeight },
 			]}

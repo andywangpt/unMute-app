@@ -14,7 +14,7 @@ export const ColorThemes = [
 		WHICH_WORDS: '#9eb2b1',
 		SOCIAL_WORDS: '#768585',
 		PATHWAY_WORDS: '#ffeecc',
-		backgroundColor: '',
+		BACKGROUND_COLOR: '#2e3a43',
 		// ... add other color properties as needed
 	},
 	{
@@ -31,7 +31,7 @@ export const ColorThemes = [
 		WHICH_WORDS: '#6C8B89',
 		SOCIAL_WORDS: '#8E9D9B',
 		PATHWAY_WORDS: '#9EB5B3',
-		backgroundColor: '#E6EFEF',
+		BACKGROUND_COLOR: '#6C8B89',
 	},
 	{
 		themeName: 'Contrast Therapeutic',
@@ -47,6 +47,6 @@ export const ColorThemes = [
 		WHICH_WORDS: '#FFB58D',
 		SOCIAL_WORDS: '#FFA070',
 		PATHWAY_WORDS: '#FFEBDA',
-		backgroundColor: '#E6EFEF',
+		BACKGROUND_COLOR: '#FFD9BF',
 	},
 ]

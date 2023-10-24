@@ -11,6 +11,7 @@ import * as Speech from 'expo-speech'
 
 import { ColorThemes } from './ColorThemes.js'
 import { WordData } from './WordData.js'
+import { getButtonColor } from './ButtonColor.js'
 
 const TopMenuButtons = ({
 	displayText,
@@ -22,7 +23,7 @@ const TopMenuButtons = ({
 	setButtonLayout,
 	buttonWidth,
 	buttonHeight,
-	currentThemeIndex = 0,
+	currentThemeIndex,
 }) => {
 	const dictateText = () => {
 		Speech.speak(displayText)
@@ -64,11 +65,23 @@ const TopMenuButtons = ({
 	}
 
 	return (
-		<View style={styles.xStack}>
+		<View
+			style={[
+				styles.xStack,
+				{
+					backgroundColor:
+						ColorThemes[currentThemeIndex].BACKGROUND_COLOR,
+				},
+			]}
+		>
 			<TouchableOpacity
 				onPress={handleHomeButtonPress}
 				style={[
 					styles.menuButton,
+					{
+						backgroundColor:
+							ColorThemes[currentThemeIndex].menuColor,
+					},
 					{ width: buttonWidth, height: buttonHeight },
 				]}
 			>
@@ -78,6 +91,10 @@ const TopMenuButtons = ({
 			<TouchableOpacity
 				style={[
 					styles.menuButton,
+					{
+						backgroundColor:
+							ColorThemes[currentThemeIndex].menuColor,
+					},
 					{ width: buttonWidth, height: buttonHeight },
 				]}
 				onPress={handleHelloButtonPress}
@@ -113,6 +130,10 @@ const TopMenuButtons = ({
 			<TouchableOpacity
 				style={[
 					styles.menuButton,
+					{
+						backgroundColor:
+							ColorThemes[currentThemeIndex].menuColor,
+					},
 					{ width: buttonWidth, height: buttonHeight },
 				]}
 				onPress={deleteLastWord}
@@ -123,6 +144,10 @@ const TopMenuButtons = ({
 			<TouchableOpacity
 				style={[
 					styles.menuButton,
+					{
+						backgroundColor:
+							ColorThemes[currentThemeIndex].menuColor,
+					},
 					{ width: buttonWidth, height: buttonHeight },
 				]}
 				onPress={clearDisplayText}
@@ -134,6 +159,10 @@ const TopMenuButtons = ({
 				onPress={handleHomeButtonPress}
 				style={[
 					styles.menuButton,
+					{
+						backgroundColor:
+							ColorThemes[currentThemeIndex].menuColor,
+					},
 					{ width: buttonWidth, height: buttonHeight },
 				]}
 			>
@@ -164,7 +193,7 @@ const styles = StyleSheet.create({
 		borderRadius: 10,
 		borderWidth: 1,
 		borderColor: 'black',
-		backgroundColor: ColorThemes[1].menuColor,
+		// backgroundColor: getButtonColor(currentThemeIndex),
 	},
 	buttonText: {
 		fontSize: 15,

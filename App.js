@@ -10,7 +10,7 @@ import {
 	Dimensions,
 } from 'react-native'
 
-import ColorThemes from './ColorThemes.js'
+import { ColorThemes } from './ColorThemes.js'
 
 import TopMenuButtons from './TopMenuButtons.js'
 import SideMenuButton from './SideMenuButton.js'
@@ -43,7 +43,7 @@ export default function App() {
 
 	const inputRef = useRef(null)
 
-	const [currentThemeIndex, setCurrentThemeIndex] = useState('0')
+	const [currentThemeIndex, setCurrentThemeIndex] = useState(0)
 
 	// const changeTheme = () => {
 	// 	console.log('changeTheme')
@@ -112,9 +112,19 @@ export default function App() {
 		setButtonLayout(data)
 	}
 
+	console.log(ColorThemes[currentThemeIndex].BGColor)
+
 	return (
 		<GestureHandlerRootView style={{ flex: 1 }}>
-			<SafeAreaView style={styles.container}>
+			<SafeAreaView
+				style={[
+					styles.container,
+					{
+						backgroundColor:
+							ColorThemes[currentThemeIndex].BACKGROUND_COLOR,
+					},
+				]}
+			>
 				<View style={styles.yStack}>
 					<TopMenuButtons
 						setButtonLayout={setButtonLayout}
@@ -151,7 +161,6 @@ export default function App() {
 										setCurrentThemeIndex={
 											setCurrentThemeIndex
 										}
-								
 									/>
 								)}
 								keyExtractor={(item) => item.id}
@@ -201,7 +210,7 @@ export default function App() {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: '#2e3a43',
+		// backgroundColor: '#2e3a43',
 	},
 	yStack: {
 		padding: 0,
