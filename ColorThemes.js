@@ -39,32 +39,16 @@ export const ColorThemes = [
 		ifPressed: '#FFFFFF',
 		menuColor: '#8FA3A0',
 		QUESTION_WORDS: '#FFA070',
-		WHO_WORDS: '#8FA3A0', //F3F8F8
-		HOW_WORDS: '#C5DED9',
+		WHO_WORDS: '#C8D6C5', //F3F8F8
+		HOW_WORDS: '#EDEEEB',
 		WHEN_WORDS: '#E1E9E7',
-		HOWMUCH_WORDS: '#FFD9BF',
-		WHERE_WORDS: '#F3F8F8',
-		WHAT_WORDS: '#FFC4A1',
-		WHICH_WORDS: '#FFB58D',
-		SOCIAL_WORDS: '#FFA070',
+		HOWMUCH_WORDS: '#F4F9F5',
+		WHERE_WORDS: '#F2F7F4',
+		WHAT_WORDS: '#F0F3F1',
+		WHICH_WORDS: '#D8E3D9',
+		SOCIAL_WORDS: '#BFCBC2', //E1E9E7
 		PATHWAY_WORDS: '#FFEBDA', //new button colors
 		BACKGROUND_COLOR: '#FFD9BF',
-	},
-	{
-		themeName: 'Minimal Neutral',
-		ifPressed: '#FFFFFF',
-		menuColor: '#D8E2DC',
-		QUESTION_WORDS: '#8FA3A0', //FEC89A
-		WHO_WORDS: '#FEC5BB', //FEC5BB
-		HOW_WORDS: '#ECE4DB', //FCD5CE
-		WHAT_WORDS: '#FAE1DD',
-		WHEN_WORDS: '#F8EDEB',
-		HOWMUCH_WORDS: '#FFD9BF',
-		WHERE_WORDS: '#FEC89A',
-		WHICH_WORDS: '#FFB58D',
-		SOCIAL_WORDS: '#FCD5CE', //ECE4DB
-		PATHWAY_WORDS: '#FFEBDA',
-		BACKGROUND_COLOR: '#ECE4DB',
 	},
 
 	{
@@ -100,6 +84,24 @@ export const ColorThemes = [
 		PATHWAY_WORDS: '#FFB7B2',
 		BACKGROUND_COLOR: '#FF9AA2',
 	},
+
+	{
+		themeName: 'Minimal Neutral',
+		ifPressed: '#FFFFFF',
+		menuColor: '#F7FAF8',
+		QUESTION_WORDS: '#8FA3A0', //FEC89A
+		WHO_WORDS: '#F0F3F1', //FEC5BB
+		HOW_WORDS: '#F9FCFA', //FCD5CE
+		WHAT_WORDS: '#FAE1DD',
+		WHEN_WORDS: '#F8EDEB',
+		HOWMUCH_WORDS: '#FFD9BF',
+		WHERE_WORDS: '#FEC89A',
+		WHICH_WORDS: '#FFB58D',
+		SOCIAL_WORDS: '#ECE4DB', //ECE4DB
+		PATHWAY_WORDS: '#FFEBDA',
+		BACKGROUND_COLOR: '#ECE4DB',
+	},
+
 	{
 		themeName: 'Cool Calm',
 		ifPressed: '#CEE7E6',
