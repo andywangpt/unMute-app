@@ -29,8 +29,8 @@ const screenHeight = Dimensions.get('window').height
 
 const buttonMargin = 1
 //asl
-const buttonWidth = screenWidth / numCols - 2 * buttonMargin
-const buttonHeight = screenHeight / numRows - 2 * buttonMargin - 5
+const buttonWidth = screenWidth / numCols - 2 * buttonMargin 
+const buttonHeight = screenHeight / numRows - 2 * buttonMargin - 6
 
 console.log('buttonheight', buttonHeight)
 

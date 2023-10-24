@@ -194,6 +194,14 @@ const styles = StyleSheet.create({
 		borderWidth: 1,
 		borderColor: 'black',
 		// backgroundColor: getButtonColor(currentThemeIndex),
+		shadowColor: '#000',
+		shadowOffset: {
+			width: 1,
+			height: 2,
+		},
+		shadowOpacity: 0.35,
+		shadowRadius: 15.84,
+		elevation: 5,
 	},
 	buttonText: {
 		fontSize: 15,

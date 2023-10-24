@@ -13,6 +13,14 @@ export const buttonStyles = StyleSheet.create({
 		borderWidth: 1,
 		// backgroundColor: '#636f6f',
 		//MECH #636f6f
+		shadowColor: '#000',
+		shadowOffset: {
+			width: 1,
+			height: 2,
+		},
+		shadowOpacity: 0.35,
+		shadowRadius: 12.84,
+		elevation: 5,
 	},
 	buttonText: {
 		color: 'black',
@@ -30,5 +38,14 @@ export const buttonStyles = StyleSheet.create({
 		borderRadius: 10,
 		borderColor: 'black',
 		borderWidth: 1,
-	}
+
+		shadowColor: '#000',
+		shadowOffset: {
+			width: 1,
+			height: 2,
+		},
+		shadowOpacity: 0.35,
+		shadowRadius: 22.84,
+		elevation: 5,
+	},
 })
