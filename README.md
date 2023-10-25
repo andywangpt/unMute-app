@@ -7,12 +7,14 @@ A talking soundboard for speech-impaired kids (React Native)
 <img width="1254" alt="Screen Shot 2022-07-08 at 12 06 11 PM" src="./assets/therapeutic-screenshot.png">
 <img width="1254" alt="Screen Shot 2022-07-08 at 12 06 11 PM" src="./assets/purple-screenshot.png">
 
-<b>Summary</b>
+## Summary
 
-This full-stack API application allows users to access Twitter's API and find some of the latest tweets. By default, the 'Search Tweet' page will feature some of the latest tweets with the 'fps' hashtag but the user can search for tweets by user or by content. Additionally, the user can go to 'Random Tweet' to see a random tweet from five of my favorite FPS gaming studios.
+Unmute is a mobile application designed to empower speech-impaired children with a voice of their own. Built using React Native, this full-stack application targets an initial market of 5-year-old children in Taiwan. The app functions as a talking soundboard, making it easier for children to communicate their thoughts, wants, and needs; allowing them to develop their own sense of self and autonomy.
 
-This project was my first time building a full-stack application to interact with API data. It took me some time to wrap my head around how data moves from back-end to front-end and how to best send and receive it but it's been a very exciting process building something from scratch and trying to get your data from the console to being nicely formated and displayed on the page.
+The application has a broader roadmap that includes extending its features for a wider age range and adaptation for medical conditions like aphasia or stroke. In addition to the app, we will later be offering AAC (Augmentative and Alternative Communication) training videos, programs, and workshops to onboard therapists and parents effectively.
 
-<b>Author</b>
+The journey of developing this app has been an incredible learning experience, from understanding the unique challenges faced by speech-impaired children to engineering a responsive, user-friendly interface. We're not just building an app; we're creating a tool that can change lives.
 
-<ul><b>Andy Wang</b> - <i>Full-Stack Software Developer - </i><a href=https://www.linkedin.com/in/andy-wang-wreckcreation>LinkedIn</a>
+## Author
+
+**Andy Wang** - _React Native Developer_ - [LinkedIn](https://www.linkedin.com/in/andy-wang-wreckcreation)
