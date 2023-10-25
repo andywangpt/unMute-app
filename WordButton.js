@@ -29,8 +29,6 @@ export default function WordButton({
 	const [timeoutId, setTimeoutId] = useState(null)
 	const [isEditing, setIsEditing] = useState(false)
 
-	const [lastPressedButton, setLastPressedButton] = useState(null)
-
 	useEffect(() => {
 		setCurrentText(text)
 	}, [text])
@@ -63,26 +61,18 @@ export default function WordButton({
 	}
 
 	function updateWordData(id, newText) {
-		// Find the index of the button with the matching id
 		const index = WordData.findIndex((button) => button.id === id)
 
-		// If the button is found, update its word property
 		if (index !== -1) {
 			WordData[index].word = newText
-			// setButtonLayout([...WordData])
 		}
 	}
-
-	// function handleLongPress() {
-	// 	drag()
-	// 	console.log('drag')
-	// }
 
 	return (
 		<Pressable
 			onPress={handleWordButtonPress}
 			style={({ pressed }) => [
-				getButtonColor(category, pressed, currentThemeIndex),
+				getButtonColor(category, pressed, currentThemeIndex, setDisplayText),
 				buttonStyles.button,
 				{ width: buttonWidth, height: buttonHeight },
 			]}

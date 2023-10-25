@@ -1,4 +1,4 @@
-import { GestureHandlerRootView } from 'react-native-gesture-handler'
+
 
 import React, { useState, useEffect, useRef } from 'react'
 import {
@@ -11,7 +11,7 @@ import {
 } from 'react-native'
 
 import { ColorThemes } from './ColorThemes.js'
-
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import TopMenuButtons from './TopMenuButtons.js'
 import SideMenuButton from './SideMenuButton.js'
 import WordButton from './WordButton.js'
@@ -28,11 +28,11 @@ const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height
 
 const buttonMargin = 1
-//asl
+
 const buttonWidth = screenWidth / numCols - 2 * buttonMargin 
 const buttonHeight = screenHeight / numRows - 2 * buttonMargin - 6
 
-console.log('buttonheight', buttonHeight)
+
 
 export default function App() {
 	const [buttonLayout, setButtonLayout] = useState([...WordData])
@@ -44,13 +44,6 @@ export default function App() {
 	const inputRef = useRef(null)
 
 	const [currentThemeIndex, setCurrentThemeIndex] = useState(0)
-
-	// const changeTheme = () => {
-	// 	console.log('changeTheme')
-	// 	setCurrentThemeIndex(
-	// 		(prevIndex) => (prevIndex + 1) % ColorThemes.length
-	// 	)
-	// }
 
 	useEffect(() => {
 		if (showKeyboard) {
@@ -112,8 +105,6 @@ export default function App() {
 		setButtonLayout(data)
 	}
 
-	console.log(ColorThemes[currentThemeIndex].BGColor)
-
 	return (
 		<GestureHandlerRootView style={{ flex: 1 }}>
 			<SafeAreaView
@@ -154,6 +145,7 @@ export default function App() {
 										showKeyboard={showKeyboard}
 										setShowKeyboard={setShowKeyboard}
 										setKeyboardInput={setKeyboardInput}
+									
 										keyboardInput={keyboardInput}
 										buttonWidth={buttonWidth}
 										buttonHeight={buttonHeight}
@@ -193,6 +185,7 @@ export default function App() {
 										setCurrentThemeIndex={
 											setCurrentThemeIndex
 										}
+										
 									/>
 								)}
 								keyExtractor={(item) => item.id}
@@ -210,7 +203,6 @@ export default function App() {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		// backgroundColor: '#2e3a43',
 	},
 	yStack: {
 		padding: 0,

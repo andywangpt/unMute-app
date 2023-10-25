@@ -20,6 +20,7 @@ const SideMenuButton = ({
 	showKeyboard,
 	setShowKeyboard,
 	setKeyboardInput,
+	setDisplayText,
 	buttonWidth,
 	buttonHeight,
 	currentThemeIndex,
@@ -124,14 +125,16 @@ const SideMenuButton = ({
 
 			case 'theme':
 				// setCurrentThemeIndex(currentThemeIndex++)
-				console.log('button press')
+				
 				setCurrentThemeIndex(
-					(prevIndex) =>
-						(prevIndex + 1) % ColorThemes.length
+					(prevIndex) => (prevIndex + 1) % ColorThemes.length
 				)
+				setDisplayText(ColorThemes[currentThemeIndex].themeName)
+
 				break
 
 			default:
+				
 				break
 		}
 	}
@@ -141,7 +144,12 @@ const SideMenuButton = ({
 			onPress={() => handleMenuPress(text)}
 			onLongPress={() => RNRestart.Restart()}
 			style={({ pressed }) => [
-				getButtonColor(category, pressed, currentThemeIndex),
+				getButtonColor(
+					category,
+					pressed,
+					currentThemeIndex,
+					setDisplayText
+				),
 				buttonStyles.menuButton,
 				{ width: buttonWidth, height: buttonHeight },
 			]}
@@ -173,7 +181,6 @@ const styles = StyleSheet.create({
 		borderWidth: 1,
 		borderColor: 'black',
 		// backgroundColor: '#636f6f',
-		
 	},
 	buttonText: {
 		fontSize: 35,

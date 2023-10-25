@@ -6,9 +6,10 @@ export const getButtonColor = (
 	category,
 	pressed,
 	currentThemeIndex,
+	setDisplayText
 ) => {
-
 	const theme = ColorThemes[currentThemeIndex]
+	// setDisplayText(theme.themeName)  //wont get cleared from other setdisplaytext inputs
 
 	if (category === 'MENU') {
 		return [
