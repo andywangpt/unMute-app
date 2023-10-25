@@ -17,4 +17,4 @@ The journey of developing this app has been an incredible learning experience, f
 
 ## Author
 
-**Andy Wang** - _React Native Developer_ - [LinkedIn](https://www.linkedin.com/in/andy-wang-wreckcreation)
+**Andy Wang** - _React Native Developer_ - [LinkedIn](https://www.linkedin.com/in/andy-wang-wreckcreation) [X](https://twitter.com/wreckcr3ation)
