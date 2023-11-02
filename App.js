@@ -1,6 +1,5 @@
-
-
 import React, { useState, useEffect, useRef } from 'react'
+
 import {
 	FlatList,
 	SafeAreaView,
@@ -12,27 +11,24 @@ import {
 
 import { ColorThemes } from './ColorThemes.js'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
-import TopMenuButtons from './TopMenuButtons.js'
-import SideMenuButton from './SideMenuButton.js'
-import WordButton from './WordButton.js'
-
+import { LogBox } from 'react-native'
 import { MenuButtonData } from './MenuButtonData.js'
 import { WordData } from './WordData.js'
 
 import DraggableFlatList from 'react-native-draggable-flatlist'
+import TopMenuButtons from './TopMenuButtons.js'
+import SideMenuButton from './SideMenuButton.js'
+import WordButton from './WordButton.js'
+
+LogBox.ignoreAllLogs(true)
 
 const numCols = 12
 const numRows = 9
-
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height
-
 const buttonMargin = 1
-
 const buttonWidth = screenWidth / numCols - 2 * buttonMargin 
 const buttonHeight = screenHeight / numRows - 2 * buttonMargin - 6
-
-
 
 export default function App() {
 	const [buttonLayout, setButtonLayout] = useState([...WordData])
@@ -40,11 +36,10 @@ export default function App() {
 	const [displayText, setDisplayText] = useState('')
 	const [showKeyboard, setShowKeyboard] = useState(false)
 	const [keyboardInput, setKeyboardInput] = useState('')
-
-	const inputRef = useRef(null)
-
 	const [currentThemeIndex, setCurrentThemeIndex] = useState(0)
-
+	
+	const inputRef = useRef(null)
+	
 	useEffect(() => {
 		if (showKeyboard) {
 			inputRef.current.focus()
@@ -145,7 +140,6 @@ export default function App() {
 										showKeyboard={showKeyboard}
 										setShowKeyboard={setShowKeyboard}
 										setKeyboardInput={setKeyboardInput}
-									
 										keyboardInput={keyboardInput}
 										buttonWidth={buttonWidth}
 										buttonHeight={buttonHeight}
@@ -222,6 +216,5 @@ const styles = StyleSheet.create({
 		width: '100%',
 		flex: 1,
 		padding: 1,
-		// margin: 1,
 	},
 })

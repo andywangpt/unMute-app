@@ -1,7 +1,7 @@
 // themes.js
 export const ColorThemes = [
 	{
-		themeName: 'Mech',
+		themeName: ' mechanical ',
 		ifPressed: '#f1ffff',
 		menuColor: '#636f6f',
 		QUESTION_WORDS: '#ffaa00',
@@ -15,10 +15,9 @@ export const ColorThemes = [
 		SOCIAL_WORDS: '#768585',
 		PATHWAY_WORDS: '#ffeecc',
 		BACKGROUND_COLOR: '#2e3a43',
-		// ... add other color properties as needed
 	},
 	{
-		themeName: 'Therapeutic',
+		themeName: ' granite ',
 		ifPressed: '#B4C0BE',
 		menuColor: '#6C8B89',
 		QUESTION_WORDS: '#B24B4B',
@@ -35,7 +34,7 @@ export const ColorThemes = [
 		//C1CCCD,
 	},
 	{
-		themeName: 'Contrast Therapeutic',
+		themeName: ' terracotta ',
 		ifPressed: '#FFFFFF',
 		menuColor: '#8FA3A0',
 		QUESTION_WORDS: '#FFA070',
@@ -52,7 +51,7 @@ export const ColorThemes = [
 	},
 
 	{
-		themeName: 'Purple',
+		themeName: ' lavender ',
 		ifPressed: '#FFFFFF',
 		menuColor: '#B6A7B6',
 		QUESTION_WORDS: '#EBCEBF',
@@ -69,7 +68,7 @@ export const ColorThemes = [
 	},
 
 	{
-		themeName: 'Playful Pastel',
+		themeName: ' ( pastel in progress ) ',
 		ifPressed: '#E8F1F2',
 		menuColor: '#6EB5FF',
 		QUESTION_WORDS: '#FFC3A0',
@@ -86,7 +85,7 @@ export const ColorThemes = [
 	},
 
 	{
-		themeName: 'Minimal Neutral',
+		themeName: '( minimal in progress )',
 		ifPressed: '#FFFFFF',
 		menuColor: '#F7FAF8',
 		QUESTION_WORDS: '#8FA3A0', //FEC89A
@@ -103,7 +102,7 @@ export const ColorThemes = [
 	},
 
 	{
-		themeName: 'Cool Calm',
+		themeName: ' ( cool in progress ) ',
 		ifPressed: '#CEE7E6',
 		menuColor: '#89CFF0',
 		QUESTION_WORDS: '#77DD77',
@@ -119,7 +118,7 @@ export const ColorThemes = [
 		BACKGROUND_COLOR: '#B19CD9',
 	},
 	{
-		themeName: 'Juicy Joy',
+		themeName: ' ( pink bar in progress ) ',
 		ifPressed: '#FFEDD2',
 		menuColor: '#FFABAB',
 		QUESTION_WORDS: '#FFC3A0',
@@ -135,7 +134,7 @@ export const ColorThemes = [
 		BACKGROUND_COLOR: '#FFC3CE',
 	},
 	{
-		themeName: 'Vibrant Vivid',
+		themeName: ' ( retro ski jacket in progress ) ',
 		ifPressed: '#F4F5F7',
 		menuColor: '#5A67D8',
 		QUESTION_WORDS: '#48BB78',
@@ -151,7 +150,7 @@ export const ColorThemes = [
 		BACKGROUND_COLOR: '#E2E8F0',
 	},
 	{
-		themeName: 'Bold Bliss',
+		themeName: ' ( bold in progress )',
 		ifPressed: '#F7FAFC',
 		menuColor: '#2C7A7B',
 		QUESTION_WORDS: '#ECC94B',
@@ -167,7 +166,7 @@ export const ColorThemes = [
 		BACKGROUND: '#EDF2F7',
 	},
 	{
-		themeName: 'Fresh Flare',
+		themeName: ' ( flare in progress ) ',
 		ifPressed: '#F0FFF4',
 		menuColor: '#38B2AC',
 		QUESTION_WORDS: '#68D391',

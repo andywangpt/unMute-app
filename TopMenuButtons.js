@@ -189,11 +189,9 @@ const styles = StyleSheet.create({
 		margin: 1,
 		padding: 0,
 		height: 80,
-		// width: buttonWidth,
 		borderRadius: 10,
 		borderWidth: 1,
 		borderColor: 'black',
-		// backgroundColor: getButtonColor(currentThemeIndex),
 		shadowColor: '#000',
 		shadowOffset: {
 			width: 1,
@@ -210,7 +208,6 @@ const styles = StyleSheet.create({
 	displayStyle: {
 		justifyContent: 'center',
 		alignItems: 'center',
-		// height: 80,
 		backgroundColor: '#F0EFEB',
 		marginLeft: 3,
 		marginRight: 3,

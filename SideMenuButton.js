@@ -124,17 +124,15 @@ const SideMenuButton = ({
 				break
 
 			case 'theme':
-				// setCurrentThemeIndex(currentThemeIndex++)
-				
-				setCurrentThemeIndex(
-					(prevIndex) => (prevIndex + 1) % ColorThemes.length
-				)
-				setDisplayText(ColorThemes[currentThemeIndex].themeName)
+				setCurrentThemeIndex((prevIndex) => {
+					const newIndex = (prevIndex + 1) % ColorThemes.length
+					setDisplayText(ColorThemes[newIndex].themeName)
+					return newIndex
+				})
 
 				break
 
 			default:
-				
 				break
 		}
 	}
@@ -175,12 +173,10 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		margin: 1,
 		padding: 0,
-		// height: 75,
-		// width: '8.18%',
 		borderRadius: 10,
 		borderWidth: 1,
 		borderColor: 'black',
-		// backgroundColor: '#636f6f',
+
 	},
 	buttonText: {
 		fontSize: 35,

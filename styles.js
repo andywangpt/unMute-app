@@ -6,13 +6,10 @@ export const buttonStyles = StyleSheet.create({
 		alignItems: 'center',
 		margin: 1,
 		padding: 1,
-		// width: '8.18%',
 		height: 80,
 		borderRadius: 10,
 		borderColor: 'black',
 		borderWidth: 1,
-		// backgroundColor: '#636f6f',
-		//MECH #636f6f
 		shadowColor: '#000',
 		shadowOffset: {
 			width: 1,
@@ -33,12 +30,10 @@ export const buttonStyles = StyleSheet.create({
 		alignItems: 'center',
 		margin: 1,
 		padding: 1,
-		// width: '99%',
 		height: 80,
 		borderRadius: 10,
 		borderColor: 'black',
 		borderWidth: 1,
-
 		shadowColor: '#000',
 		shadowOffset: {
 			width: 1,

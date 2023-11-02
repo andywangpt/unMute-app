@@ -1,4 +1,4 @@
-export const WordData = [
+export const WordDataTW = [
 	{
 		id: 'who',
 		word: 'who',
@@ -734,4 +734,4 @@ export const WordData = [
 	// ... other buttons
 ]
 
-// export default WordData;
+

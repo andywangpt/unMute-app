@@ -1,4 +1,3 @@
-import { StyleSheet } from 'react-native'
 import { buttonStyles } from './styles.js'
 import { ColorThemes } from './ColorThemes.js'
 
@@ -6,10 +5,8 @@ export const getButtonColor = (
 	category,
 	pressed,
 	currentThemeIndex,
-	setDisplayText
 ) => {
 	const theme = ColorThemes[currentThemeIndex]
-	// setDisplayText(theme.themeName)  //wont get cleared from other setdisplaytext inputs
 
 	if (category === 'MENU') {
 		return [

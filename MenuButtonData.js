@@ -5,52 +5,52 @@ export const MenuButtonData = [
 		category: 'MENU',
 		index: [0, 0],
 		pathways: [
-			{ id: '1', coordinates: [1, 0] },
-			{ id: '2', coordinates: [1, 0] },
-			{ id: '3', coordinates: [1, 0] },
-			{ id: '4', coordinates: [1, 0] },
-			{ id: '5', coordinates: [1, 0] },
-			{ id: '6', coordinates: [1, 0] },
-			{ id: '7', coordinates: [1, 0] },
-			{ id: '8', coordinates: [1, 0] },
-			{ id: '9', coordinates: [1, 0] },
-			{ id: '0', coordinates: [1, 0] },
-			{ id: '$', coordinates: [1, 0] },
-			{ id: '10', coordinates: [1, 0] },
-			{ id: '20', coordinates: [1, 0] },
-			{ id: '30', coordinates: [1, 0] },
-			{ id: '40', coordinates: [1, 0] },
-			{ id: '50', coordinates: [1, 0] },
-			{ id: '60', coordinates: [1, 0] },
-			{ id: '70', coordinates: [1, 0] },
-			{ id: '80', coordinates: [1, 0] },
-			{ id: '90', coordinates: [1, 0] },
-			{ id: '+', coordinates: [1, 0] },
-			{ id: '11', coordinates: [1, 0] },
-			{ id: '100', coordinates: [1, 0] },
-			{ id: '11', coordinates: [1, 0] },
-			{ id: '11', coordinates: [1, 0] },
-			{ id: '11', coordinates: [1, 0] },
-			{ id: '11', coordinates: [1, 0] },
-			{ id: '11', coordinates: [1, 0] },
-			{ id: '11', coordinates: [1, 0] },
-			{ id: '11', coordinates: [1, 0] },
-			{ id: '11', coordinates: [1, 0] },
-			{ id: '11', coordinates: [1, 0] },
-			{ id: '11', coordinates: [1, 0] },
-			{ id: '11', coordinates: [1, 0] },
-			{ id: '11', coordinates: [1, 0] },
-			{ id: '11', coordinates: [1, 0] },
-			{ id: '11', coordinates: [1, 0] },
-			{ id: '11', coordinates: [1, 0] },
-			{ id: '11', coordinates: [1, 0] },
-			{ id: '11', coordinates: [1, 0] },
-			{ id: '11', coordinates: [1, 0] },
-			{ id: '11', coordinates: [1, 0] },
-			{ id: '11', coordinates: [1, 0] },
-			{ id: '11', coordinates: [1, 0] },
-			{ id: '11', coordinates: [1, 0] },
-			{ id: '11', coordinates: [1, 0] },
+			{ id: '1' },
+			{ id: '2' },
+			{ id: '3' },
+			{ id: '4' },
+			{ id: '5' },
+			{ id: '6' },
+			{ id: '7' },
+			{ id: '8' },
+			{ id: '9' },
+			{ id: '0' },
+			{ id: '$' },
+			{ id: '10' },
+			{ id: '20' },
+			{ id: '30' },
+			{ id: '40' },
+			{ id: '50' },
+			{ id: '60' },
+			{ id: '70' },
+			{ id: '80' },
+			{ id: '90' },
+			{ id: '+' },
+			{ id: '11' },
+			{ id: '100' },
+			{ id: '11' },
+			{ id: '11' },
+			{ id: '11' },
+			{ id: '11' },
+			{ id: '11' },
+			{ id: '11' },
+			{ id: '11' },
+			{ id: '11' },
+			{ id: '11' },
+			{ id: '11' },
+			{ id: '11' },
+			{ id: '11' },
+			{ id: '11' },
+			{ id: '11' },
+			{ id: '11' },
+			{ id: '11' },
+			{ id: '11' },
+			{ id: '11' },
+			{ id: '11' },
+			{ id: '11' },
+			{ id: '11' },
+			{ id: '11' },
+			{ id: '11' },
 		],
 	},
 	{
@@ -66,128 +66,119 @@ export const MenuButtonData = [
 		category: 'MENU',
 		index: [0, 2],
 		pathways: [
-			{ id: 'ok', coordinates: [1, 0] },
-			{ id: 'cool', coordinates: [1, 0] },
-			{ id: 'ok', coordinates: [1, 0] },
-			{ id: 'cool', coordinates: [1, 0] },
-			{ id: 'ok', coordinates: [1, 0] },
-			{ id: 'ok', coordinates: [1, 0] },
-			{ id: 'ok', coordinates: [1, 0] },
-			{ id: '', coordinates: [1, 0] },
-			{ id: '', coordinates: [1, 0] },
-			{ id: '', coordinates: [1, 0] },
-			{ id: '', coordinates: [1, 0] },
+			{ id: 'ok' },
+			{ id: 'cool' },
+			{ id: 'ok' },
+			{ id: 'cool' },
+			{ id: 'ok' },
+			{ id: 'ok' },
+			{ id: 'ok' },
+			{ id: '' },
+			{ id: '' },
+			{ id: '' },
+			{ id: '' },
 
-			{ id: 'Who are you?', coordinates: [1, 0] },
+			{ id: 'Who are you?' },
 
-			{ id: '20', coordinates: [1, 0] },
+			{ id: '20' },
 
-			{ id: '30', coordinates: [1, 0] },
+			{ id: '30' },
 
-			{ id: '40', coordinates: [1, 0] },
+			{ id: '40' },
 
-			{ id: '50', coordinates: [1, 0] },
+			{ id: '50' },
 
-			{ id: '60', coordinates: [1, 0] },
+			{ id: '60' },
 
-			{ id: '70', coordinates: [1, 0] },
+			{ id: '70' },
 
-			{ id: 'What time is it?', coordinates: [1, 0] },
+			{ id: 'What time is it?' },
 
-			{ id: '90', coordinates: [1, 0] },
+			{ id: '90' },
 
-			{ id: '', coordinates: [1, 0] },
+			{ id: '' },
 
-			{ id: '', coordinates: [1, 0] },
+			{ id: '' },
 
-			{ id: 'Who do you know here?', coordinates: [1, 0] },
-
-			{
-				id: 'How long have you been working on this?',
-				coordinates: [1, 0],
-			},
-
-			{ id: '30', coordinates: [1, 0] },
-
-			{ id: '40', coordinates: [1, 0] },
+			{ id: 'Who do you know here?' },
 
 			{
-				id: 'When do you start working on this?',
-				coordinates: [1, 0],
+				id: 'How long have you been working on this?'
 			},
 
-			{ id: 'How much more?', coordinates: [1, 0] },
+			{ id: '30' },
 
-			{ id: 'Where do you live?', coordinates: [1, 0] },
-
-			{ id: 'What are you working on?', coordinates: [1, 0] },
-
-			{ id: 'Which one do you like better?', coordinates: [1, 0] },
-
-			{ id: '', coordinates: [1, 0] },
-
-			{ id: '', coordinates: [1, 0] },
-
-			{ id: 'Who do you know here?', coordinates: [1, 0] },
+			{ id: '40' },
 
 			{
-				id: 'How long have you been working on this?',
-				coordinates: [1, 0],
+				id: 'When do you start working on this?'
 			},
 
-			{ id: '30', coordinates: [1, 0] },
+			{ id: 'How much more?' },
 
-			{ id: '40', coordinates: [1, 0] },
+			{ id: 'Where do you live?' },
+
+			{ id: 'What are you working on?' },
+
+			{ id: 'Which one do you like better?' },
+
+			{ id: '' },
+
+			{ id: '' },
+
+			{ id: 'Who do you know here?' },
 
 			{
-				id: 'When do you start working on this?',
-				coordinates: [1, 0],
+				id: 'How long have you been working on this?'
 			},
 
-			{ id: 'How much', coordinates: [1, 0] },
+			{ id: '30' },
 
-			{ id: 'Where do you live?', coordinates: [1, 0] },
+			{ id: '40' },
 
-			{ id: 'What are you working on?', coordinates: [1, 0] },
+			{
+				id: 'When do you start working on this?'
+			},
 
-			{ id: 'Which one do you like better?', coordinates: [1, 0] },
+			{ id: 'How much' },
 
-			{ id: '', coordinates: [1, 0] },
+			{ id: 'Where do you live?' },
+
+			{ id: 'What are you working on?' },
+
+			{ id: 'Which one do you like better?' },
+
+			{ id: '' },
 		],
 	},
 	{
 		id: 'topics',
 		word: 'topics',
 		category: 'MENU',
-		index: [0, 3],
 		pathways: [],
 	},
 	{
 		id: 'keyboard',
 		word: 'keyboard',
 		category: 'MENU',
-		index: [4, 0],
 		pathways: [],
 	},
 	{
 		id: 'settings',
 		word: 'settings',
 		category: 'MENU',
-		index: [0, 6],
 		pathways: [],
 	},
 	{
 		id: 'back',
 		word: 'back',
 		category: 'MENU',
-		index: [0, 5],
 		pathways: [],
 	},
 	{
 		id: 'theme',
 		word: 'theme',
 		category: 'MENU',
-		index: [0, 5],
 		pathways: [],
 	},
 ]
