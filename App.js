@@ -14,6 +14,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { LogBox } from 'react-native'
 import { MenuButtonData } from './MenuButtonData.js'
 import { WordData } from './WordData.js'
+import { WordDataTW } from './WordDataTW.js'
 
 import DraggableFlatList from 'react-native-draggable-flatlist'
 import TopMenuButtons from './TopMenuButtons.js'
@@ -31,7 +32,7 @@ const buttonWidth = screenWidth / numCols - 2 * buttonMargin
 const buttonHeight = screenHeight / numRows - 2 * buttonMargin - 6
 
 export default function App() {
-	const [buttonLayout, setButtonLayout] = useState([...WordData])
+	const [buttonLayout, setButtonLayout] = useState([...WordDataTW])
 	const [menuLayout, setMenuLayout] = useState([...MenuButtonData])
 	const [displayText, setDisplayText] = useState('')
 	const [showKeyboard, setShowKeyboard] = useState(false)

@@ -1,7 +1,7 @@
 export const WordDataTW = [
 	{
 		id: 'who',
-		word: 'who',
+		word: '誰',
 		category: 'QUESTION_WORDS',
 		index: [1, 0],
 		pathways: [

@@ -16,10 +16,10 @@ import { getButtonColor } from './ButtonColor.js'
 const TopMenuButtons = ({
 	displayText,
 	setDisplayText,
-	showKeyboard, // Receive showKeyboard prop
-	setKeyboardInput, // Receive setKeyboardInput
-	keyboardInput, // Receive keyboardInput
-	inputRef, // Receive inputRef
+	showKeyboard, 
+	setKeyboardInput, 
+	keyboardInput, 
+	inputRef, 
 	setButtonLayout,
 	buttonWidth,
 	buttonHeight,
