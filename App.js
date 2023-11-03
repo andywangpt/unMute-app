@@ -32,6 +32,7 @@ const buttonWidth = screenWidth / numCols - 2 * buttonMargin
 const buttonHeight = screenHeight / numRows - 2 * buttonMargin - 6
 
 export default function App() {
+	
 	const [buttonLayout, setButtonLayout] = useState([...WordDataTW])
 	const [menuLayout, setMenuLayout] = useState([...MenuButtonData])
 	const [displayText, setDisplayText] = useState('')

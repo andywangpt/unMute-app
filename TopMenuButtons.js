@@ -29,7 +29,7 @@ const TopMenuButtons = ({
 }) => {
 
 	const dictateText = () => {
-		Speech.speak(displayText)
+		Speech.speak(displayText, { language: 'zh-TW' })
 	}
 
 	const handleHomeButtonPress = () => {

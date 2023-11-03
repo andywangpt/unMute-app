@@ -152,50 +152,50 @@ export const WordDataTW = [
 	},
 
 	{
-		id: 'now',
-		word: 'now',
+		id: '好',
+		word: '好',
 		category: 'WHEN_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'more',
-		word: 'more',
+		id: '很',
+		word: '很',
 		category: 'HOWMUCH_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'in',
-		word: 'in',
+		id: '因為',
+		word: '因為',
 		category: 'WHERE_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'is',
-		word: 'is',
+		id: '上',
+		word: '上',
 		category: 'WHAT_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'this',
-		word: 'this',
+		id: '如果',
+		word: '如果',
 		category: 'WHICH_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'hi',
-		word: 'hi',
+		id: '現在',
+		word: '現在',
 		category: 'SOCIAL_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'bye',
-		word: 'bye',
+		id: '嗨',
+		word: '嗨',
 		category: 'SOCIAL_WORDS',
 		pathways: [],
 	},
@@ -203,78 +203,78 @@ export const WordDataTW = [
 	//-----------------------------------------------
 
 	{
-		id: 'you',
-		word: 'you',
+		id: '你',
+		word: '你',
 		category: 'WHO_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'sleep',
-		word: 'sleep',
+		id: '喜歡',
+		word: '喜歡',
 		category: 'HOW_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'hear',
-		word: 'hear',
+		id: '吃',
+		word: '吃',
 		category: 'HOW_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'draw',
-		word: 'draw',
+		id: '放',
+		word: '放',
 		category: 'HOW_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'later',
-		word: 'later',
+		id: '大',
+		word: '大',
 		category: 'WHEN_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'less',
-		word: 'less',
+		id: '多',
+		word: '多',
 		category: 'HOWMUCH_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'out',
-		word: 'out',
+		id: '',
+		word: '',
 		category: 'WHERE_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'not',
-		word: 'not',
+		id: '下',
+		word: '下',
 		category: 'WHAT_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'that',
-		word: 'that',
+		id: '但是',
+		word: '但是',
 		category: 'WHICH_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'please',
-		word: 'please',
-		category: 'SOCIAL_WORDS',
+		id: '先',
+		word: '先',
+		category: 'WHY_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'thank you',
-		word: 'thank you',
+		id: '拜託',
+		word: '拜託',
 		category: 'SOCIAL_WORDS',
 		pathways: [],
 	},
@@ -282,235 +282,156 @@ export const WordDataTW = [
 	//-----------------------------------------------
 
 	{
-		id: 'she',
-		word: 'she',
+		id: '他',
+		word: '他',
 		category: 'WHO_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'play',
-		word: 'play',
+		id: '有',
+		word: '有',
 		category: 'HOW_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'touch',
-		word: 'touch',
+		id: '喝',
+		word: '喝',
 		category: 'HOW_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'give',
-		word: 'give',
+		id: '玩',
+		word: '玩',
 		category: 'HOW_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'before',
-		word: 'before',
+		id: '小',
+		word: '小',
 		category: 'WHEN_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'none',
-		word: 'none',
+		id: '少',
+		word: '少',
 		category: 'HOWMUCH_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'up',
-		word: 'up',
+		id: '開心',
+		word: '開心',
 		category: 'WHERE_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'to',
-		word: 'to',
+		id: '後',
+		word: '後',
 		category: 'WHAT_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'fast',
-		word: 'fast',
+		id: '前',
+		word: '前',
 		category: 'WHICH_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'dont know',
-		word: "don't know",
-		category: 'SOCIAL_WORDS',
+		id: '等',
+		word: '等',
+		category: 'WHY_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'maybe',
-		word: 'maybe',
+		id: '沒關係',
+		word: '沒關係',
 		category: 'SOCIAL_WORDS',
 		pathways: [],
 	},
 	//-----------------------------------------------
 
 	{
-		id: 'he',
-		word: 'he',
+		id: '們',
+		word: '們',
 		category: 'WHO_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'want',
-		word: 'want',
+		id: '想',
+		word: '想',
 		category: 'HOW_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'taste',
-		word: 'taste',
+		id: '看見找',
+		word: '看見找',
 		category: 'HOW_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'take',
-		word: 'take',
+		id: '覺得',
+		word: '覺得',
 		category: 'HOW_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'after',
-		word: 'after',
+		id: '快',
+		word: '快',
 		category: 'WHEN_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'some',
-		word: 'some',
+		id: '',
+		word: '',
 		category: 'HOWMUCH_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'down',
-		word: 'down',
+		id: '傷心',
+		word: '傷心',
 		category: 'WHERE_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'the',
-		word: 'the',
+		id: '進裡',
+		word: '進裡',
 		category: 'WHAT_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'slow',
-		word: 'slow',
+		id: '出外',
+		word: '出外',
 		category: 'WHICH_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'and',
-		word: 'and',
+		id: '然後',
+		word: '然後',
 		category: 'SOCIAL_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'because',
-		word: 'because',
-		category: 'SOCIAL_WORDS',
-		pathways: [],
-	},
-
-	//-----------------------------------------------
-
-	{
-		id: 'they',
-		word: 'they',
-		category: 'WHO_WORDS',
-		pathways: [],
-	},
-
-	{
-		id: 'help',
-		word: 'help',
-		category: 'HOW_WORDS',
-		pathways: [],
-	},
-
-	{
-		id: 'tell',
-		word: 'tell',
-		category: 'HOW_WORDS',
-		pathways: [],
-	},
-
-	{
-		id: 'break',
-		word: 'break',
-		category: 'HOW_WORDS',
-		pathways: [],
-	},
-
-	{
-		id: 'never',
-		word: 'never',
-		category: 'WHEN_WORDS',
-		pathways: [],
-	},
-
-	{
-		id: 'big',
-		word: 'big',
-		category: 'HOWMUCH_WORDS',
-		pathways: [],
-	},
-
-	{
-		id: 'there',
-		word: 'there',
-		category: 'WHERE_WORDS',
-		pathways: [],
-	},
-
-	{
-		id: 'for',
-		word: 'for',
-		category: 'WHAT_WORDS',
-		pathways: [],
-	},
-
-	{
-		id: 'middle',
-		word: 'middle',
-		category: 'WHICH_WORDS',
-		pathways: [],
-	},
-
-	{
-		id: 'sorry',
-		word: 'sorry',
-		category: 'SOCIAL_WORDS',
-		pathways: [],
-	},
-
-	{
-		id: 'excuse me',
-		word: 'excuse me',
+		id: '不客氣',
+		word: '不客氣',
 		category: 'SOCIAL_WORDS',
 		pathways: [],
 	},
@@ -518,160 +439,238 @@ export const WordDataTW = [
 	//-----------------------------------------------
 
 	{
-		id: 'we',
-		word: 'we',
+		id: '這個',
+		word: '這個',
 		category: 'WHO_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'need',
-		word: 'need',
+		id: '來',
+		word: '來',
 		category: 'HOW_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'smell',
-		word: 'smell',
+		id: '去走行',
+		word: '去走行',
 		category: 'HOW_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'make',
-		word: 'make',
+		id: '做',
+		word: '做',
 		category: 'HOW_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'almost',
-		word: 'almost',
+		id: '都全部',
+		word: '都全部',
 		category: 'WHEN_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'all',
-		word: 'all',
+		id: '痛',
+		word: '痛',
 		category: 'HOWMUCH_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'here',
-		word: 'here',
+		id: '生氣',
+		word: '生氣',
 		category: 'WHERE_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'do',
-		word: 'do',
+		id: '這',
+		word: '這',
 		category: 'WHAT_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'first',
-		word: 'first',
+		id: '那',
+		word: '那',
 		category: 'WHICH_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'and',
-		word: 'and',
+		id: '到',
+		word: '到',
 		category: 'SOCIAL_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'but',
-		word: 'but',
+		id: '對不起',
+		word: '對不起',
+		category: 'SOCIAL_WORDS',
+		pathways: [],
+	},
+
+	//-----------------------------------------------
+
+	{
+		id: '那個',
+		word: '那個',
+		category: 'WHO_WORDS',
+		pathways: [],
+	},
+
+	{
+		id: '開',
+		word: '開',
+		category: 'HOW_WORDS',
+		pathways: [],
+	},
+
+	{
+		id: '關',
+		word: '關',
+		category: 'HOW_WORDS',
+		pathways: [],
+	},
+
+	{
+		id: '停',
+		word: '停',
+		category: 'HOW_WORDS',
+		pathways: [],
+	},
+
+	{
+		id: '點',
+		word: '點',
+		category: 'WHEN_WORDS',
+		pathways: [],
+	},
+
+	{
+		id: '累',
+		word: '累',
+		category: 'HOWMUCH_WORDS',
+		pathways: [],
+	},
+
+	{
+		id: '害怕',
+		word: '害怕',
+		category: 'WHERE_WORDS',
+		pathways: [],
+	},
+
+	{
+		id: '在',
+		word: '在',
+		category: 'WHAT_WORDS',
+		pathways: [],
+	},
+
+	{
+		id: '和',
+		word: '和',
+		category: 'WHICH_WORDS',
+		pathways: [],
+	},
+
+	{
+		id: '也',
+		word: '也',
+		category: 'SOCIAL_WORDS',
+		pathways: [],
+	},
+
+	{
+		id: '不好意思',
+		word: '不好意思',
 		category: 'SOCIAL_WORDS',
 		pathways: [],
 	},
 	//-----------------------------------------------
 
 	{
-		id: 'it',
-		word: 'it',
+		id: '的',
+		word: '的',
 		category: 'WHO_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'like',
-		word: 'like',
+		id: '幫',
+		word: '幫',
 		category: 'HOW_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'can',
-		word: 'can',
+		id: '回換',
+		word: '回換',
 		category: 'HOW_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'try',
-		word: 'try',
+		id: '把',
+		word: '把',
 		category: 'HOW_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'yet',
-		word: 'yet',
+		id: '沒',
+		word: '沒',
 		category: 'WHEN_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'small',
-		word: 'small',
+		id: '了',
+		word: '了',
 		category: 'HOWMUCH_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'on',
-		word: 'on',
+		id: '樣',
+		word: '樣',
 		category: 'WHERE_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'a',
-		word: 'a',
+		id: '一',
+		word: '一',
 		category: 'WHAT_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'last',
-		word: 'last',
+		id: '是',
+		word: '是',
 		category: 'WHICH_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'stop',
-		word: 'stop',
+		id: '會',
+		word: '會',
 		category: 'SOCIAL_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'question',
-		word: 'question',
+		id: '謝謝',
+		word: '謝謝',
 		category: 'SOCIAL_WORDS',
 		pathways: [],
 	},
-	// ... other buttons
 ]
 
 
