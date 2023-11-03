@@ -125,6 +125,7 @@ export default function App() {
 						buttonWidth={buttonWidth}
 						buttonHeight={buttonHeight}
 						currentThemeIndex={currentThemeIndex}
+						setMenuLayout={setMenuLayout}
 					/>
 
 					<View style={styles.xStack}>

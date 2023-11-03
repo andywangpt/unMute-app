@@ -13,6 +13,7 @@ import { ColorThemes } from './ColorThemes.js'
 import { WordData } from './WordData.js'
 import { WordDataTW } from './WordDataTW.js'
 import { getButtonColor } from './ButtonColor.js'
+import { MenuButtonDataTW } from './MenuButtonDataTW.js'
 
 
 const TopMenuButtons = ({
@@ -26,6 +27,7 @@ const TopMenuButtons = ({
 	buttonWidth,
 	buttonHeight,
 	currentThemeIndex,
+	setMenuLayout
 }) => {
 
 	const dictateText = () => {
@@ -34,6 +36,7 @@ const TopMenuButtons = ({
 
 	const handleHomeButtonPress = () => {
 		setButtonLayout(WordDataTW)
+		setMenuLayout(MenuButtonDataTW)
 		console.log([WordDataTW])
 	}
 

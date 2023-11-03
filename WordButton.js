@@ -45,7 +45,7 @@ export default function WordButton({
 				setDisplayText((prevText) => {
 					return prevText + ' ' + currentText
 				})
-				Speech.speak(currentText)
+				Speech.speak(currentText, { language: 'zh-TW' })
 			}, 800)
 			setTimeoutId(id)
 		}
