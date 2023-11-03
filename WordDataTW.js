@@ -1,9 +1,8 @@
 export const WordDataTW = [
 	{
-		id: 'who',
+		id: '誰',
 		word: '誰',
 		category: 'QUESTION_WORDS',
-		index: [1, 0],
 		pathways: [
 			{ id: 'my', coordinates: [1, 0] },
 			{ id: 'your', coordinates: [1, 1] },
@@ -12,19 +11,16 @@ export const WordDataTW = [
 	},
 
 	{
-		id: 'how',
-		word: 'how',
-		category: 'QUESTION_WORDS',
-		index: [1, 0],
+		id: '還',
+		word: '還',
+		category: 'HOW_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'feel',
-		word: 'feel',
-		color: 'blue',
-		category: 'HOW_WORDS',
-		index: [1, 1],
+		id: '什麼',
+		word: '什麼',
+		category: 'QUESTION_WORDS',
 		pathways: [
 			{ id: 'happy', coordinates: [1, 0] },
 			{ id: 'sad', coordinates: [1, 1] },
@@ -70,137 +66,87 @@ export const WordDataTW = [
 	},
 
 	{
-		id: 'go',
-		word: 'go',
-		color: 'blue',
-		category: 'HOW_WORDS',
-		index: [1, 1],
-		pathways: [
-			{ id: 'happy', coordinates: [1, 0] },
-			{ id: 'sad', coordinates: [1, 1] },
-			{ id: 'angry', coordinates: [1, 2] },
-		],
-	},
-
-	{
-		id: 'when',
-		word: 'when',
-		color: 'blue',
+		id: '怎麼',
+		word: '怎麼',
 		category: 'QUESTION_WORDS',
-		index: [1, 1],
-		pathways: [
-			{ id: 'happy', coordinates: [1, 0] },
-			{ id: 'sad', coordinates: [1, 1] },
-			{ id: 'angry', coordinates: [1, 2] },
-		],
+		pathways: [],
 	},
 
 	{
-		id: 'how much',
-		word: 'how much',
-		color: 'blue',
+		id: '哪裡個邊',
+		word: '哪裡個邊',
 		category: 'QUESTION_WORDS',
-		index: [1, 1],
-		pathways: [
-			{ id: 'happy', coordinates: [1, 0] },
-			{ id: 'sad', coordinates: [1, 1] },
-			{ id: 'angry', coordinates: [1, 2] },
-		],
+		pathways: [],
 	},
 
 	{
-		id: 'where',
-		word: 'where',
-		color: 'blue',
+		id: '東西',
+		word: '東西',
 		category: 'QUESTION_WORDS',
-		index: [1, 1],
-		pathways: [
-			{ id: 'happy', coordinates: [1, 0] },
-			{ id: 'sad', coordinates: [1, 1] },
-			{ id: 'angry', coordinates: [1, 2] },
-			{ id: 'here', coordinates: [1, 2] },
-			{ id: 'there', coordinates: [1, 2] },
-		],
+		pathways: [],
 	},
 
 	{
-		id: 'what',
-		word: 'what',
-		color: 'blue',
+		id: '為什麼',
+		word: '為什麼',
 		category: 'QUESTION_WORDS',
-		index: [1, 1],
-		pathways: [
-			{ id: 'happy', coordinates: [1, 0] },
-			{ id: 'sad', coordinates: [1, 1] },
-			{ id: 'angry', coordinates: [1, 2] },
-		],
+		pathways: [],
 	},
 
 	{
-		id: 'which',
-		word: 'which',
-		color: 'blue',
+		id: '地方',
+		word: '地方',
 		category: 'QUESTION_WORDS',
-		index: [1, 1],
-		pathways: [
-			{ id: 'happy', coordinates: [1, 0] },
-			{ id: 'sad', coordinates: [1, 1] },
-			{ id: 'angry', coordinates: [1, 2] },
-		],
+		pathways: [],
 	},
 
 	{
-		id: 'yes',
-		word: 'yes',
-		color: 'blue',
+		id: '嗎',
+		word: '嗎',
+		category: 'QUESTION_WORDS',
+		pathways: [],
+	},
+
+	{
+		id: '時候',
+		word: '時候',
+		category: 'QUESTION_WORDS',
+		pathways: [],
+	},
+
+	{
+		id: '不',
+		word: '不',
 		category: 'SOCIAL_WORDS',
-		index: [1, 1],
-		pathways: [
-			{ id: 'happy', coordinates: [1, 0] },
-			{ id: 'sad', coordinates: [1, 1] },
-			{ id: 'angry', coordinates: [1, 2] },
-		],
-	},
-
-	{
-		id: 'no',
-		word: 'no',
-		color: 'blue',
-		category: 'SOCIAL_WORDS',
-		index: [1, 1],
-		pathways: [
-			{ id: 'happy', coordinates: [1, 0] },
-			{ id: 'sad', coordinates: [1, 1] },
-			{ id: 'angry', coordinates: [1, 2] },
-		],
+		pathways: [],
 	},
 
 	//-----------------------------------------------
 
 	{
-		id: 'i',
-		word: 'i',
+		id: '我',
+		word: '我',
 		category: 'WHO_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'eat',
-		word: 'eat',
+		id: '要',
+		word: '要',
 		category: 'HOW_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'see',
-		word: 'see',
+		id: '給',
+		word: '給',
 		category: 'HOW_WORDS',
 		pathways: [],
 	},
 
 	{
-		id: 'read',
-		word: 'read',
+		id: '說',
+		word: '說',
 		category: 'HOW_WORDS',
 		pathways: [],
 	},
@@ -260,7 +206,6 @@ export const WordDataTW = [
 		id: 'you',
 		word: 'you',
 		category: 'WHO_WORDS',
-		index: [3, 0],
 		pathways: [],
 	},
 
@@ -340,7 +285,6 @@ export const WordDataTW = [
 		id: 'she',
 		word: 'she',
 		category: 'WHO_WORDS',
-		index: [3, 0],
 		pathways: [],
 	},
 
@@ -419,7 +363,6 @@ export const WordDataTW = [
 		id: 'he',
 		word: 'he',
 		category: 'WHO_WORDS',
-		index: [3, 0],
 		pathways: [],
 	},
 
@@ -499,7 +442,6 @@ export const WordDataTW = [
 		id: 'they',
 		word: 'they',
 		category: 'WHO_WORDS',
-		index: [3, 0],
 		pathways: [],
 	},
 
@@ -579,7 +521,6 @@ export const WordDataTW = [
 		id: 'we',
 		word: 'we',
 		category: 'WHO_WORDS',
-		index: [3, 0],
 		pathways: [],
 	},
 
@@ -658,7 +599,6 @@ export const WordDataTW = [
 		id: 'it',
 		word: 'it',
 		category: 'WHO_WORDS',
-		index: [3, 0],
 		pathways: [],
 	},
 

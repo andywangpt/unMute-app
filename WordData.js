@@ -3,7 +3,6 @@ export const WordData = [
 		id: 'who',
 		word: 'who',
 		category: 'QUESTION_WORDS',
-		index: [1, 0],
 		pathways: [
 			{ id: 'my', coordinates: [1, 0] },
 			{ id: 'your', coordinates: [1, 1] },
@@ -15,7 +14,6 @@ export const WordData = [
 		id: 'how',
 		word: 'how',
 		category: 'QUESTION_WORDS',
-		index: [1, 0],
 		pathways: [],
 	},
 
@@ -24,7 +22,6 @@ export const WordData = [
 		word: 'feel',
 		color: 'blue',
 		category: 'HOW_WORDS',
-		index: [1, 1],
 		pathways: [
 			{ id: 'happy', coordinates: [1, 0] },
 			{ id: 'sad', coordinates: [1, 1] },
@@ -74,7 +71,6 @@ export const WordData = [
 		word: 'go',
 		color: 'blue',
 		category: 'HOW_WORDS',
-		index: [1, 1],
 		pathways: [
 			{ id: 'happy', coordinates: [1, 0] },
 			{ id: 'sad', coordinates: [1, 1] },
@@ -87,7 +83,6 @@ export const WordData = [
 		word: 'when',
 		color: 'blue',
 		category: 'QUESTION_WORDS',
-		index: [1, 1],
 		pathways: [
 			{ id: 'happy', coordinates: [1, 0] },
 			{ id: 'sad', coordinates: [1, 1] },
@@ -100,7 +95,6 @@ export const WordData = [
 		word: 'how much',
 		color: 'blue',
 		category: 'QUESTION_WORDS',
-		index: [1, 1],
 		pathways: [
 			{ id: 'happy', coordinates: [1, 0] },
 			{ id: 'sad', coordinates: [1, 1] },
@@ -113,7 +107,6 @@ export const WordData = [
 		word: 'where',
 		color: 'blue',
 		category: 'QUESTION_WORDS',
-		index: [1, 1],
 		pathways: [
 			{ id: 'happy', coordinates: [1, 0] },
 			{ id: 'sad', coordinates: [1, 1] },
@@ -128,7 +121,6 @@ export const WordData = [
 		word: 'what',
 		color: 'blue',
 		category: 'QUESTION_WORDS',
-		index: [1, 1],
 		pathways: [
 			{ id: 'happy', coordinates: [1, 0] },
 			{ id: 'sad', coordinates: [1, 1] },
@@ -141,7 +133,6 @@ export const WordData = [
 		word: 'which',
 		color: 'blue',
 		category: 'QUESTION_WORDS',
-		index: [1, 1],
 		pathways: [
 			{ id: 'happy', coordinates: [1, 0] },
 			{ id: 'sad', coordinates: [1, 1] },
@@ -154,7 +145,6 @@ export const WordData = [
 		word: 'yes',
 		color: 'blue',
 		category: 'SOCIAL_WORDS',
-		index: [1, 1],
 		pathways: [
 			{ id: 'happy', coordinates: [1, 0] },
 			{ id: 'sad', coordinates: [1, 1] },
@@ -167,7 +157,6 @@ export const WordData = [
 		word: 'no',
 		color: 'blue',
 		category: 'SOCIAL_WORDS',
-		index: [1, 1],
 		pathways: [
 			{ id: 'happy', coordinates: [1, 0] },
 			{ id: 'sad', coordinates: [1, 1] },
@@ -260,7 +249,6 @@ export const WordData = [
 		id: 'you',
 		word: 'you',
 		category: 'WHO_WORDS',
-		index: [3, 0],
 		pathways: [],
 	},
 
@@ -340,7 +328,6 @@ export const WordData = [
 		id: 'she',
 		word: 'she',
 		category: 'WHO_WORDS',
-		index: [3, 0],
 		pathways: [],
 	},
 
@@ -419,7 +406,6 @@ export const WordData = [
 		id: 'he',
 		word: 'he',
 		category: 'WHO_WORDS',
-		index: [3, 0],
 		pathways: [],
 	},
 
@@ -499,7 +485,6 @@ export const WordData = [
 		id: 'they',
 		word: 'they',
 		category: 'WHO_WORDS',
-		index: [3, 0],
 		pathways: [],
 	},
 
@@ -579,7 +564,6 @@ export const WordData = [
 		id: 'we',
 		word: 'we',
 		category: 'WHO_WORDS',
-		index: [3, 0],
 		pathways: [],
 	},
 
@@ -658,7 +642,6 @@ export const WordData = [
 		id: 'it',
 		word: 'it',
 		category: 'WHO_WORDS',
-		index: [3, 0],
 		pathways: [],
 	},
 

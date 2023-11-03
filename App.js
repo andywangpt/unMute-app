@@ -13,7 +13,7 @@ import { ColorThemes } from './ColorThemes.js'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { LogBox } from 'react-native'
 import { MenuButtonData } from './MenuButtonData.js'
-import { WordData } from './WordData.js'
+// import { WordData } from './WordData.js'
 import { WordDataTW } from './WordDataTW.js'
 
 import DraggableFlatList from 'react-native-draggable-flatlist'

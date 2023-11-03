@@ -11,7 +11,9 @@ import * as Speech from 'expo-speech'
 
 import { ColorThemes } from './ColorThemes.js'
 import { WordData } from './WordData.js'
+import { WordDataTW } from './WordDataTW.js'
 import { getButtonColor } from './ButtonColor.js'
+
 
 const TopMenuButtons = ({
 	displayText,
@@ -25,13 +27,14 @@ const TopMenuButtons = ({
 	buttonHeight,
 	currentThemeIndex,
 }) => {
+
 	const dictateText = () => {
 		Speech.speak(displayText)
 	}
 
 	const handleHomeButtonPress = () => {
-		setButtonLayout(WordData)
-		console.log([WordData])
+		setButtonLayout(WordDataTW)
+		console.log([WordDataTW])
 	}
 
 	const handleHelloButtonPress = (word) => {
